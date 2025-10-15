@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Grotesk:wght@300..700&display=swap");
+@theme {
+--color-mauve: #dabfffff;
+--color-primary: #907ad6ff;
+--color-ultra-violet: #4f518cff;
+--color-space-cadet: #2c2a4aff;
+--color-secondary: #7fdeffff;
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-text: "DM Sans", sans-serif;
+  --text-small: 14px;
+  --font-normal: 700;
+}
+@import "tailwindcss";
+html {
+  scroll-behavior: smooth;
+}
+.nav-link {
+  color: #000000;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s;
+}
+
+.nav-link.active {
+  color: #000000;
+  font-weight: 700;
+}
+
+.nav-link:hover {
+  color: #374151;
+}
+.swiper-pagination-bullet {
+  background-color: #7cf686 !important;
+}

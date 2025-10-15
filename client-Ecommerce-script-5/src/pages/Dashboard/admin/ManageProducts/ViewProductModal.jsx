@@ -1,7 +1,19 @@
-import { Calendar, DollarSign, FileText, Package, Tag, X } from "lucide-react";
+import { Calendar, DollarSign, FileText, Package, Tag, X, CheckCircle } from "lucide-react";
 
 export default function ViewProductModal({ product, isOpen, onClose }) {
   if (!isOpen || !product) return null;
+
+  // Helper function to parse specifications
+  const parseSpecifications = (specString) => {
+    if (!specString) return [];
+    
+    return specString.split(';').map(item => {
+      const [key, value] = item.split(':').map(part => part.trim());
+      return { key, value };
+    }).filter(item => item.key && item.value);
+  };
+
+  const specifications = parseSpecifications(product.specifications);
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString("en-US", {
@@ -86,6 +98,7 @@ export default function ViewProductModal({ product, isOpen, onClose }) {
               {/* Pricing */}
               <div className="bg-gray-50 rounded-lg p-4">
                 <div className="flex items-center gap-2 mb-2">
+                  <DollarSign className="w-5 h-5 text-gray-600" />
                   <h4 className="font-semibold text-gray-900">Pricing</h4>
                 </div>
                 <div className="flex items-center gap-4">
@@ -93,10 +106,10 @@ export default function ViewProductModal({ product, isOpen, onClose }) {
                   product.discountPrice < product.price ? (
                     <>
                       <span className="text-2xl font-bold text-green-600">
-                        Tk {product.discountPrice}
+                        Tk {product.discountPrice?.toLocaleString()}
                       </span>
                       <span className="text-lg text-gray-400 line-through">
-                        Tk {product.price}
+                        Tk {product.price?.toLocaleString()}
                       </span>
                       <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
                         {Math.round(
@@ -109,7 +122,7 @@ export default function ViewProductModal({ product, isOpen, onClose }) {
                     </>
                   ) : (
                     <span className="text-2xl font-bold text-gray-900">
-                      Tk {product.price}
+                      Tk {product.price?.toLocaleString()}
                     </span>
                   )}
                 </div>
@@ -161,6 +174,28 @@ export default function ViewProductModal({ product, isOpen, onClose }) {
                   <p className="text-gray-700 text-xs text-justify">
                     {product.description}
                   </p>
+                </div>
+              )}
+
+              {/* Specifications - NEW SECTION */}
+              {specifications.length > 0 && (
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <CheckCircle className="w-5 h-5 text-gray-600" />
+                    <h4 className="font-semibold text-gray-900">Specifications</h4>
+                  </div>
+                  <div className="space-y-3 max-h-60 overflow-y-auto">
+                    {specifications.map((spec, index) => (
+                      <div key={index} className="flex justify-between items-start py-2 border-b border-gray-200 last:border-b-0">
+                        <span className="text-gray-600 font-medium text-sm flex-1">
+                          {spec.key}
+                        </span>
+                        <span className="text-gray-900 font-semibold text-sm text-right flex-1 ml-4">
+                          {spec.value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
 

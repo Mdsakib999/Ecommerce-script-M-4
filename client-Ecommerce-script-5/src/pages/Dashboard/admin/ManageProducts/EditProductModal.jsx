@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 import { useGetAllCategoriesQuery } from "../../../../redux/app/services/category/categoryApi";
 
 export default function EditProductModal({ product, isOpen, onClose }) {
-  console.log(product)
   const [formData, setFormData] = useState({
     name: "",
     brand: "",
@@ -17,6 +16,8 @@ export default function EditProductModal({ product, isOpen, onClose }) {
     inStock: true,
     images: [],
   });
+
+  const [newImageFiles, setNewImageFiles] = useState([]); // ADD THIS LINE
 
   useEffect(() => {
     if (isOpen && product) {
@@ -31,6 +32,7 @@ export default function EditProductModal({ product, isOpen, onClose }) {
         inStock: product.inStock ?? true,
         images: product.images || [],
       });
+      setNewImageFiles([]); // ADD THIS LINE
     }
   }, [product, isOpen]);
 
@@ -41,9 +43,29 @@ export default function EditProductModal({ product, isOpen, onClose }) {
     e.preventDefault();
 
     try {
+      const submitData = new FormData();
+
+      submitData.append("name", formData.name);
+      submitData.append("brand", formData.brand);
+      submitData.append("category", formData.category);
+      submitData.append("price", formData.price);
+      submitData.append("discountPrice", formData.discountPrice || "");
+      submitData.append("quantity", formData.quantity);
+      submitData.append("description", formData.description);
+      submitData.append("inStock", formData.inStock);
+
+      const existingImages = formData.images.filter(
+        (img) => !img.startsWith("blob:")
+      );
+      submitData.append("existingImages", JSON.stringify(existingImages));
+
+      newImageFiles.forEach((file) => {
+        submitData.append("images", file);
+      });
+
       const result = await updateProduct({
         productId: product._id,
-        productInfo: { ...product, ...formData },
+        productInfo: submitData,
       }).unwrap();
 
       if (result.success) {
@@ -67,8 +89,21 @@ export default function EditProductModal({ product, isOpen, onClose }) {
     }));
   };
 
-  // Remove image by index
   const handleRemoveImage = (idx) => {
+    const imageToRemove = formData.images[idx];
+
+    // If it's a blob URL (new image), remove from newImageFiles
+    if (imageToRemove.startsWith("blob:")) {
+      const blobImages = formData.images.filter((img) =>
+        img.startsWith("blob:")
+      );
+      const blobIndex = blobImages.indexOf(imageToRemove);
+
+      if (blobIndex >= 0) {
+        setNewImageFiles((files) => files.filter((_, i) => i !== blobIndex));
+      }
+    }
+
     setFormData((prev) => {
       const newImages = prev.images.filter((_, i) => i !== idx);
       return { ...prev, images: newImages };
@@ -77,10 +112,21 @@ export default function EditProductModal({ product, isOpen, onClose }) {
 
   const handleAddImage = (e) => {
     const file = e.target.files[0];
-    console.log(file)
     if (file) {
-      const url = URL.createObjectURL(file);
-      setFormData((prev) => ({ ...prev, images: [...prev.images, url] }));
+      if (formData.images.length >= 4) {
+        toast.error(<h1 className="font-serif">Maximum 4 images allowed!</h1>, {
+          position: "bottom-right",
+        });
+        return;
+      }
+
+      setNewImageFiles((prev) => [...prev, file]);
+
+      const previewUrl = URL.createObjectURL(file);
+      setFormData((prev) => ({
+        ...prev,
+        images: [...prev.images, previewUrl],
+      }));
     }
   };
 
@@ -135,18 +181,20 @@ export default function EditProductModal({ product, isOpen, onClose }) {
                 ) : (
                   <span className="text-gray-400 text-sm">No images</span>
                 )}
-                <label
-                  className="w-24 h-24 flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg text-gray-400 hover:border-blue-500 hover:text-blue-600 transition-colors bg-gray-50 cursor-pointer"
-                  title="Add image"
-                >
-                  + Upload
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleAddImage}
-                    className="hidden"
-                  />
-                </label>
+                {formData.images.length < 4 && (
+                  <label
+                    className="w-24 h-24 flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg text-gray-400 hover:border-blue-500 hover:text-blue-600 transition-colors bg-gray-50 cursor-pointer"
+                    title="Add image"
+                  >
+                    + Upload
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleAddImage}
+                      className="hidden"
+                    />
+                  </label>
+                )}
               </div>
             </div>
             <div>

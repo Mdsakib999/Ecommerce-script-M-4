@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import { useGetAllCategoriesQuery } from "../../../../redux/app/services/category/categoryApi";
 
 export default function EditProductModal({ product, isOpen, onClose }) {
+  console.log(product)
   const [formData, setFormData] = useState({
     name: "",
     brand: "",
@@ -76,6 +77,7 @@ export default function EditProductModal({ product, isOpen, onClose }) {
 
   const handleAddImage = (e) => {
     const file = e.target.files[0];
+    console.log(file)
     if (file) {
       const url = URL.createObjectURL(file);
       setFormData((prev) => ({ ...prev, images: [...prev.images, url] }));

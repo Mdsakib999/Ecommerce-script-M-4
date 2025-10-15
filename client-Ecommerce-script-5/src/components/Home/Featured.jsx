@@ -128,6 +128,16 @@ const Featured = () => {
       setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10);
     }
   };
+    const scrollToIndex = (index) => {
+    if (scrollContainerRef.current) {
+      const itemWidth = scrollContainerRef.current.scrollWidth / categories.length;
+      const scrollPosition = itemWidth * index;
+      scrollContainerRef.current.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   const handlePrevious = () => {
     if (scrollContainerRef.current) {
@@ -160,7 +170,7 @@ const Featured = () => {
   }, []);
 
   return (
-    <div className="w-full bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 relative overflow-hidden">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 relative overflow-hidden">
       {/* Header Section */}
       <div className="text-center mb-12 lg:mb-16 relative z-10">
         <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-lg px-6 py-3 rounded-2xl border border-gray-200/50 shadow-lg mb-6">
@@ -185,7 +195,7 @@ const Featured = () => {
       </div>
 
       {/* Container */}
-      <div className="relative z-10 w-full overflow-hidden">
+      <div className="relative">
         {/* Navigation Arrows */}
         <button
           onClick={handlePrevious}
@@ -231,7 +241,7 @@ const Featured = () => {
               >
                 <div className="text-center relative">
                   <div
-                    className={`relative w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 mx-auto mb-5 rounded-3xl bg-gradient-to-br ${category.gradient} flex items-center justify-center group-hover:scale-110 transition-all duration-500 ${category.shadowColor} ${category.glowColor} shadow-2xl overflow-hidden border-2 border-white/20 backdrop-blur-sm`}
+                    className={`relative w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 mx-auto mb-5 rounded-3xl bg-gradient-to-br ${category.gradient} flex items-center justify-center group-hover:scale-110 transition-all duration-500  overflow-hidden border-2 border-white/20 `}
                   >
                     {category.featured && (
                       <div className="absolute -top-3 -right-3 w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-2xl animate-pulse border-2 border-white">
@@ -261,6 +271,24 @@ const Featured = () => {
             );
           })}
         </div>
+      </div>
+            {/* Dots Indicator */}
+      <div className="flex justify-center mt-8 lg:mt-12 space-x-3">
+        {Array.from({ length: Math.ceil(categories.length / 2) }).map((_, index) => (
+          <button
+            key={index}
+            onClick={() => {
+              setCurrentIndex(index * 2);
+              scrollToIndex(index * 2);
+            }}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              Math.floor(currentIndex / 2) === index
+                ? 'bg-gradient-to-r from-blue-500 to-red-500 w-8 shadow-lg'
+                : 'bg-gray-300 w-2 hover:bg-gray-400'
+            }`}
+            aria-label={`Go to page ${index + 1}`}
+          />
+        ))}
       </div>
     </div>
   );

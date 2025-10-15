@@ -18,7 +18,7 @@ export default function Product({ product }) {
     }
 
     dispatch(addToCart(product));
-
+    console.log(product)
     if (!isInCart) {
       toast.success(<h1 className="text-center font-serif">Added to cart</h1>);
     } else {

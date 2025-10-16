@@ -6,8 +6,8 @@ export default function SubHeader({isScrolled}) {
     <div 
       className={`bg-gradient-to-r from-blue-50 via-indigo-50 to-indigo-50 border-b border-blue-100/50 relative overflow-hidden transition-all duration-500 ease-in-out ${
     isScrolled 
-      ? 'opacity-0 overflow-hidden max-h-0 py-0' 
-      : 'opacity-100 max-h-20 py-3'
+      ? 'opacity-0 h-0 max-h-0 py-0' 
+      : 'opacity-100 h-auto max-h-20 py-3'
   }`}
     >
       {/* Animated background elements */}

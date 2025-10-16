@@ -31,5 +31,5 @@ html {
   color: #374151;
 }
 .swiper-pagination-bullet {
-  background-color: #7cf686 !important;
+  background-color: oklch(67.3% 0.182 276.935) !important;
 }

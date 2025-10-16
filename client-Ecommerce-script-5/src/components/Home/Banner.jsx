@@ -100,7 +100,7 @@ export default function Banner() {
 
                 {/* CTA Button */}
               <Link to="/products">
-                              <button className="bg-indigo-200 hover:bg-space-cadet text-gray-700 hover:text-white font-black px-8 py-4 rounded-2xl text-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 group">
+                              <button className="bg-indigo-300 hover:bg-ultra-violet text-gray-700 hover:text-white font-black px-8 py-4 rounded-xl text-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 group">
                   <ShoppingCart className="w-6 h-6 group-hover:scale-110 transition-transform" />
                   <span>Shop Now</span>
                 </button>

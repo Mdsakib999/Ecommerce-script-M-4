@@ -31,7 +31,7 @@ export default function OfferedProducts() {
             <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white animate-pulse"></div>
           </div>
           <div className="space-y-1">
-            <h2 className="text-2xl lg:text-4xl font-black bg-gradient-to-r from-red-600 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="text-2xl lg:text-4xl font-black bg-gradient-to-r from-sky-600 to-indigo-600 bg-clip-text text-transparent">
               Flash Deals
             </h2>
             <p className="text-gray-600 text-sm font-medium flex items-center gap-2">
@@ -42,7 +42,7 @@ export default function OfferedProducts() {
         </div>
 
         {/* Decorative Element */}
-        <div className="hidden lg:flex items-center gap-3 bg-gradient-to-r from-red-500 to-purple-500 text-white px-6 py-3 rounded-2xl shadow-2xl">
+        <div className="hidden lg:flex items-center gap-3 bg-gradient-to-r from-sky-500 to-indigo-500 text-white px-6 py-3 rounded-2xl shadow-2xl">
           <Flame className="w-5 h-5 animate-pulse" />
           <span className="font-bold text-sm uppercase tracking-wider">
             Hot Deals

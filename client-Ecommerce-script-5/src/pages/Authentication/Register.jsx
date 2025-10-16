@@ -79,7 +79,7 @@ export default function Register() {
     <div className="flex min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
       {/* Left side - Image */}
       <div className="hidden lg:flex w-1/2 items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary to-blue-500/90 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-400 to-blue-500/90 z-10"></div>
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full"></div>
           <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full"></div>
@@ -265,7 +265,7 @@ export default function Register() {
             <button
               disabled={isLoading || isGoogleLoading}
               type="submit"
-              className={`flex mx-auto mt-8 items-center ease-in-out duration-300 transition-all text-md justify-center w-full rounded-xl bg-transparent py-4 px-4 border border-primary text-primary hover:bg-primary font-semibold hover:text-white hover:border-transparent hover:shadow-xl transform hover:scale-105 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed disabled:hover:scale-100 gap-3 ${
+              className={`flex mx-auto mt-8 items-center ease-in-out duration-300 transition-all text-md justify-center w-full rounded-xl bg-transparent py-4 px-4 border border-indigo-400 text-indigo-400 hover:bg-indigo-400 font-semibold hover:text-white hover:border-transparent hover:shadow-xl transform hover:scale-105 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed disabled:hover:scale-100 gap-3 ${
                 isLoading ? "animate-pulse" : ""
               }`}
             >

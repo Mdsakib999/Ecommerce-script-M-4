@@ -23,10 +23,10 @@ export default function Footer() {
             <div className="space-y-4 lg:col-span-2">
               <Link
                 to="/"
-                className="inline-block transform hover:scale-105 transition-transform duration-300"
+                className="inline-block h-24 transform hover:scale-105 transition-transform duration-300"
               >
                 <img
-                  className="w-52 filter brightness-0 invert"
+                  className="w-52 h-full object-cover"
                   src={logo}
                   alt="BuyHive logo"
                 />

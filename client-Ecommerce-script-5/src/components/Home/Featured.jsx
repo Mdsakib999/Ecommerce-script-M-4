@@ -175,8 +175,7 @@ const Featured = () => {
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 relative overflow-hidden">
       {/* Header Section */}
       <div className="text-center mb-12 lg:mb-16 relative z-10">
-        <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-lg px-6 py-3 rounded-2xl border border-gray-200/50 shadow-lg mb-6">
-          <Sparkles className="w-5 h-5 text-indigo-500" />
+        <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-lg px-6 py-3 rounded-full border border-gray-200/50 shadow-lg mb-6">
           <span className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
             Featured Collections
           </span>

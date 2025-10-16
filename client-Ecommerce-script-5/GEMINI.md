@@ -26,7 +26,7 @@
      manage different parts of the application's 
      state.
    * Data Fetching & Caching: RTK Query, which is
-     part of Redux Toolkit, is the primary       
+     part of Redux Toolkit, is the indigo-400       
      mechanism for fetching and caching data from a
       backend API. It uses a declarative approach
      to define API endpoints.

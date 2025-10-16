@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Grotesk:wght@300..700&display=swap");
 @theme {
 --color-mauve: #dabfffff;
---color-primary: #907ad6ff;
+--color-indigo-400: #907ad6ff;
 --color-ultra-violet: #4f518cff;
 --color-space-cadet: #2c2a4aff;
 --color-secondary: #7fdeffff;

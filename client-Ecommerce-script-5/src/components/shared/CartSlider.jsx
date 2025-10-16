@@ -89,7 +89,7 @@ export default function CartSlider({ isOpen, toggleCart }) {
           <div className="flex items-center space-x-3">
             <ShoppingBag className="w-6 h-6 text-secondary" />
             <h2 className="text-xl font-bold text-gray-800">Shopping Cart</h2>
-            <span className="bg-secondary text-primary text-sm font-semibold px-2.5 py-1 rounded-full">
+            <span className="bg-secondary text-indigo-400 text-sm font-semibold px-2.5 py-1 rounded-full">
               {cartItems.length}
             </span>
           </div>

@@ -70,7 +70,7 @@ export default function Profile() {
     <div className="w-full max-w-4xl mx-auto mt-12 px-0 sm:px-4">
       <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden border border-white/20">
         {/* Profile Header */}
-        <div className="relative bg-primary p-8">
+        <div className="relative bg-indigo-400 p-8">
           {/* Background Pattern */}     
           <div className="relative flex flex-col md:flex-row items-center gap-8">
             {/* Profile Image */}

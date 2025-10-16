@@ -273,7 +273,7 @@ export default function ProductDetails() {
                 onClick={() => setActiveTab("specifications")}
                 className={`py-4 px-1 border-b-2 font-semibold text-lg transition-all duration-300 ${
                   activeTab === "specifications"
-                    ? "border-primary text-primary"
+                    ? "border-indigo-400 text-indigo-400"
                     : "border-transparent text-gray-500 hover:text-gray-700"
                 }`}
               >
@@ -283,7 +283,7 @@ export default function ProductDetails() {
                 onClick={() => setActiveTab("reviews")}
                 className={`py-4 px-1 border-b-2 font-semibold text-lg transition-all duration-300 ${
                   activeTab === "reviews"
-                    ? "border-primary text-primary"
+                    ? "border-indigo-400 text-indigo-400"
                     : "border-transparent text-gray-500 hover:text-gray-700"
                 }`}
               >
@@ -376,25 +376,25 @@ export default function ProductDetails() {
                   </h4>
                   <div className="space-y-3">
                     <div className="flex items-center py-2">
-                      <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-indigo-400 rounded-full mr-3"></div>
                       <span className="text-gray-700">
                         Free shipping available
                       </span>
                     </div>
                     <div className="flex items-center py-2">
-                      <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-indigo-400 rounded-full mr-3"></div>
                       <span className="text-gray-700">
                         Easy returns within 7 days
                       </span>
                     </div>
                     <div className="flex items-center py-2">
-                      <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-indigo-400 rounded-full mr-3"></div>
                       <span className="text-gray-700">
                         Authentic product with warranty
                       </span>
                     </div>
                     <div className="flex items-center py-2">
-                      <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-indigo-400 rounded-full mr-3"></div>
                       <span className="text-gray-700">
                         Customer support available 24/7
                       </span>

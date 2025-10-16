@@ -8,30 +8,30 @@ export default function Banner() {
   const slides = [
     {
       id: 1,
-      badge: "10.10 BRAND RUSH",
+      badge: "50% off",
       title: "WHAT'S HAPPENING",
       subtitle: "Endless Prizes, Unbeatable Prices",
-      productImage: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=400&fit=crop",
+      productImage: "https://res.cloudinary.com/dpkjsufwx/image/upload/v1760520895/products/umubcdzvmzabpnk6orpn.jpg?w=400&h=400&fit=crop",
       gradient: "from-purple-300 via-purple-200 to-pink-200",
-      productType: "sunglasses"
-    },
-    {
-      id: 2,
-      badge: "FLASH SALE",
-      title: "MEGA DEALS",
-      subtitle: "Limited Time Offers, Maximum Savings",
-      productImage: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop",
-      gradient: "from-blue-300 via-blue-200 to-cyan-200",
       productType: "headphones"
     },
     {
+      id: 2,
+      badge: "flash sales",
+      title: "MEGA DEALS",
+      subtitle: "Limited Time Offers, Maximum Savings",
+      productImage: "https://res.cloudinary.com/dpkjsufwx/image/upload/v1760521070/products/vxsssdax4idhkk4ousre.avif?w=400&h=400&fit=crop",
+      gradient: "from-blue-300 via-blue-200 to-cyan-200",
+      productType: "smart watches"
+    },
+    {
       id: 3,
-      badge: "NEW ARRIVALS",
+      badge: "new arrivals",
       title: "TRENDING NOW",
       subtitle: "Fresh Styles Just Dropped",
-      productImage: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop",
+      productImage: "https://res.cloudinary.com/dpkjsufwx/image/upload/v1760522754/products/nlfp3uc0rb7muk65aecg.jpg?w=400&h=400&fit=crop",
       gradient: "from-orange-200 via-orange-300 to-red-200",
-      productType: "shoes"
+      productType: "basketball shoes"
     }
   ];
 
@@ -82,28 +82,27 @@ export default function Banner() {
               {/* Left Side - Text Content */}
               <div className="text-white space-y-6 lg:space-y-8">
                 {/* Badge */}
-                <div className="inline-flex items-center bg-white/20 backdrop-blur-lg px-6 py-3 rounded-2xl border-2 border-white/30 shadow-2xl">
-                  <div className="w-4 h-4 bg-yellow-400 rounded-full mr-3 animate-pulse"></div>
-                  <span className="text-white font-black text-lg uppercase tracking-wider">
+                <div className="inline-flex items-center bg-white/20 backdrop-blur-lg px-4 py-2 rounded-full border-2 border-white/30 shadow-2xl">
+                  <span className="text-white font-black text-lg  tracking-wider">
                     {slides[activeSlide].badge}
                   </span>
                 </div>
 
                 {/* Main Text Content */}
                 <div className="space-y-4">
-                  <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[0.9]">
+                  <h1 className="text-3xl md:text-4xl lg:text-6xl font-black text-white leading-[0.9]">
                     {slides[activeSlide].title}
                   </h1>
-                  <p className="text-2xl md:text-3xl lg:text-4xl text-white font-semibold opacity-95 max-w-2xl">
+                  <p className="text-xl md:text-2xl lg:text-3xl text-white font-semibold opacity-95 max-w-2xl">
                     {slides[activeSlide].subtitle}
                   </p>
                 </div>
 
                 {/* CTA Button */}
               <Link to="/products">
-                              <button className="bg-secondary hover:bg-space-cadet text-gray-900 hover:text-white font-black px-10 py-5 rounded-2xl text-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 group">
+                              <button className="bg-indigo-200 hover:bg-space-cadet text-gray-700 hover:text-white font-black px-8 py-4 rounded-2xl text-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 group">
                   <ShoppingCart className="w-6 h-6 group-hover:scale-110 transition-transform" />
-                  <span>Add to Cart</span>
+                  <span>Shop Now</span>
                 </button>
               </Link>
 
@@ -125,25 +124,14 @@ export default function Banner() {
               <div className="relative lg:block">
                 <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
                   {/* Floating Product Container */}
-                  <div className="relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 border-2 border-white/20 shadow-2xl">
+                  <div className="relative bg-white/10 backdrop-blur-xl rounded-3xl py-16 px-8 border-2 border-white/20 shadow-2xl">
                     {/* Product Image */}
                     <div className="relative w-64 h-64 mx-auto transform hover:scale-105 transition-transform duration-500">
                       <img
                         src={slides[activeSlide].productImage}
                         alt={slides[activeSlide].productType}
                         className="w-full h-full object-cover rounded-2xl shadow-2xl"
-                      />
-                      
-                      {/* Floating Discount Badge */}
-                      <div className="absolute -top-4 -right-4 bg-red-500 text-white font-black px-4 py-2 rounded-xl shadow-lg transform rotate-12 animate-pulse">
-                        50% OFF
-                      </div>
-                      
-                      {/* Rating Badge */}
-                      <div className="absolute -bottom-4 -left-4 bg-yellow-400 text-gray-900 font-bold px-3 py-2 rounded-xl shadow-lg flex items-center space-x-1">
-                        <Star className="w-4 h-4 fill-current" />
-                        <span>4.8</span>
-                      </div>
+                      />                 
                     </div>
 
                     {/* Product Info */}
@@ -155,14 +143,6 @@ export default function Banner() {
                         Limited Stock Available
                       </p>
                     </div>
-                  </div>
-
-                  {/* Floating Elements */}
-                  <div className="absolute -top-6 -left-6 bg-green-400 text-white font-bold px-4 py-2 rounded-xl shadow-lg transform -rotate-12 animate-bounce">
-                    FREE SHIPPING
-                  </div>
-                  <div className="absolute -bottom-6 -right-6 bg-blue-400 text-white font-bold px-4 py-2 rounded-xl shadow-lg transform rotate-12 animate-bounce delay-1000">
-                    HOT DEAL
                   </div>
                 </div>
               </div>
@@ -198,7 +178,7 @@ export default function Banner() {
         </div>
       </div>
     </div>
-    <BottomBanner />
+    {/* <BottomBanner /> */}
 </div>
   );
 }

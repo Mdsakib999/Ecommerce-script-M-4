@@ -89,6 +89,7 @@ export default function Navbar() {
     await logout();
     dispatch(authApi.util.resetApiState());
     dispatch(clearCart());
+    setIsPictureLoaded(false)
     setIsMobileMenuOpen(false);
     setIsUserDropdownOpen(false);
     toast.success("Logged out successfully", { position: "bottom-right" });
@@ -105,7 +106,7 @@ export default function Navbar() {
             : "bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-gray-100"
         }`}
       >
-        <SubHeader />
+        <SubHeader isScrolled={isScrolled} />
 
         {/* Main navbar */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -253,7 +254,7 @@ export default function Navbar() {
                           <div className="space-y-2 p-2">
                             <Link
                               to="/login"
-                              className="block w-full text-center bg-primary text-white py-2.5 rounded-xl text-sm font-semibold hover:bg-space-cadet transition-colors duration-200"
+                              className="block w-full text-center bg-indigo-400 text-white py-2.5 rounded-xl text-sm font-semibold hover:bg-space-cadet transition-colors duration-200"
                               onClick={() => setIsUserDropdownOpen(false)}
                             >
                               Sign In
@@ -349,7 +350,7 @@ export default function Navbar() {
                 </div>
               </div>
             ) : (
-              <div className="p-6 bg-gradient-to-r from-secondary to-primary text-white">
+              <div className="p-6 bg-gradient-to-r from-secondary to-indigo-400 text-white">
                 <p className="font-semibold text-lg mb-2">Welcome to BuyHive</p>
                 <p className="text-blue-100 text-sm mb-4">
                   Sign in to get personalized experience

@@ -1,9 +1,15 @@
 import { Clock, MapPin, Shield, Truck } from "lucide-react";
 import Button from "../ui/Button";
 
-export default function SubHeader() {
+export default function SubHeader({isScrolled}) {
   return (
-    <div className="bg-gradient-to-r from-blue-50 via-indigo-50 to-indigo-50 border-b border-blue-100/50 py-3 relative overflow-hidden">
+    <div 
+      className={`bg-gradient-to-r from-blue-50 via-indigo-50 to-indigo-50 border-b border-blue-100/50 relative overflow-hidden transition-all duration-500 ease-in-out ${
+    isScrolled 
+      ? 'opacity-0 overflow-hidden max-h-0 py-0' 
+      : 'opacity-100 max-h-20 py-3'
+  }`}
+    >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-0 w-20 h-20 bg-blue-200/20 rounded-full blur-xl animate-float"></div>
@@ -11,24 +17,8 @@ export default function SubHeader() {
         <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-indigo-200/15 rounded-full blur-lg animate-pulse"></div>
       </div>
 
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 py-1">
-          {/* Left side - Delivery info with enhanced styling */}
-          <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-2xl px-4 py-2.5 border border-blue-100/50 shadow-sm hover:shadow-md transition-all duration-300 group">
-            <div className="relative">
-              <MapPin className="w-5 h-5 text-blue-500 group-hover:scale-110 transition-transform" />
-              <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-400 rounded-full border border-white"></div>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-sm font-medium text-gray-600">
-                Deliver to
-              </span>
-              <span className="text-sm font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                Chattogram 4000
-              </span>
-            </div>
-          </div>
-
           {/* Additional info badges */}
           <div className="flex items-center gap-3">
             <div className="hidden sm:flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-xl px-3 py-1.5 border border-green-100/50">
@@ -59,6 +49,13 @@ export default function SubHeader() {
               className="bg-white/80 backdrop-blur-sm border-blue-200/50 text-gray-700 hover:bg-white hover:border-blue-300 hover:shadow-md hover:scale-105 transition-all duration-300 font-medium rounded-xl px-4 py-2 text-sm"
             >
               Home
+            </Button>
+            <Button
+              type="outline"
+              to="/products"
+              className="bg-white/80 backdrop-blur-sm border-blue-200/50 text-gray-700 hover:bg-white hover:border-blue-300 hover:shadow-md hover:scale-105 transition-all duration-300 font-medium rounded-xl px-4 py-2 text-sm"
+            >
+              Products
             </Button>
             <Button type="outline" to="/about" className="">
               About

@@ -1,9 +1,9 @@
-import { ChevronLeft, ChevronRight, ShoppingCart } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import Loader from "../../utils/Loader";
-import { useGetAllProductQuery } from "../../redux/app/services/product/productApi";
 import Product from "../../pages/Products/Product";
+import { useGetAllProductQuery } from "../../redux/app/services/product/productApi";
+import Loader from "../../utils/Loader";
 
 export default function PopularProduct() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -45,7 +45,9 @@ export default function PopularProduct() {
     <div className="max-w-7xl mx-auto px-4">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 mb-6">
-        <h2 className="text-2xl md:text-4xl bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 bg-clip-text text-transparent font-semibold">Popular Products</h2>
+        <h2 className="text-2xl md:text-4xl bg-gradient-to-r from-gray-900 via-indigo-900 to-gray-900 bg-clip-text text-transparent font-semibold">
+          Popular Products
+        </h2>
         <Link to={"/products"}>
           <p className="underline text-ultra-violet cursor-pointer text-md md:text-lg font-semibold">
             View All Products

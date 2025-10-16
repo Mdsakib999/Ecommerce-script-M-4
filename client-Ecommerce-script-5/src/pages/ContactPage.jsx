@@ -23,16 +23,16 @@ export default function ContactPage() {
   return (
     <section className="min-h-screen bg-transparent flex items-center justify-center py-16 px-6">
       <div className="max-w-6xl w-full bg-white/70 backdrop-blur-lg shadow-2xl rounded-3xl p-8 md:p-12 grid md:grid-cols-2 gap-10 border border-white/40">
-        
         {/* LEFT SIDE: Contact Info */}
         <div className="flex flex-col justify-between">
           <div>
-            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Get in Touch
             </h2>
             <p className="text-gray-700 mb-10 text-base leading-relaxed">
-              We’d love to hear from you! Whether you have a question about our 
-              products, shipping, or anything else, our friendly team is ready to help.
+              We’d love to hear from you! Whether you have a question about our
+              products, shipping, or anything else, our friendly team is ready
+              to help.
             </p>
 
             <div className="space-y-5 text-gray-700">

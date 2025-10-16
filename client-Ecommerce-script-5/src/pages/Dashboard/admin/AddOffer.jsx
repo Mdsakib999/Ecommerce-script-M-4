@@ -1,11 +1,11 @@
-import { useState, useRef, useEffect } from "react";
-import { Upload, X, ImageIcon, Plus, Trash2 } from "lucide-react";
+import { ImageIcon, Plus, Trash2, Upload, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import {
   useAddOfferMutation,
-  useUpdateOfferMutation,
-  useGetAllOffersQuery,
   useDeleteOffersMutation,
+  useGetAllOffersQuery,
+  useUpdateOfferMutation,
 } from "../../../redux/app/services/offer/offerApi";
 
 export default function AddOffer() {
@@ -147,7 +147,7 @@ export default function AddOffer() {
         {/* Upload Section */}
         <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
           <div
-            className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center cursor-pointer hover:border-purple-500 hover:bg-purple-50 transition-all duration-300"
+            className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center cursor-pointer hover:border-indigo-500 hover:bg-indigo-50 transition-all duration-300"
             onClick={() => fileInputRef.current?.click()}
           >
             <ImageIcon className="w-16 h-16 text-gray-400 mx-auto mb-4" />

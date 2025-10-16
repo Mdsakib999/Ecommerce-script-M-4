@@ -1,19 +1,19 @@
-import React, { useState } from "react";
 import {
-  Search,
-  Package,
-  Truck,
+  AlertCircle,
+  Calendar,
   CheckCircle,
   Clock,
-  AlertCircle,
-  Filter,
-  Calendar,
-  MapPin,
   CreditCard,
+  Filter,
+  MapPin,
+  Package,
+  Search,
   Sparkles,
+  Truck,
 } from "lucide-react";
-import { useGetMyOrdersQuery } from "../../../redux/app/services/order/orderApi";
+import { useState } from "react";
 import { useUserInfoQuery } from "../../../redux/app/services/auth/authApi";
+import { useGetMyOrdersQuery } from "../../../redux/app/services/order/orderApi";
 
 const MyOrders = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -83,7 +83,7 @@ const MyOrders = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-2xl border border-gray-200/50 shadow-lg mb-4">
-            <Sparkles className="w-5 h-5 text-purple-500" />
+            <Sparkles className="w-5 h-5 text-indigo-500" />
             <span className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
               Order History
             </span>
@@ -108,7 +108,9 @@ const MyOrders = () => {
               </div>
               <div className="flex items-center justify-center gap-2 mt-2">
                 {getStatusIcon(status)}
-                <div className="text-sm font-semibold text-gray-600">{status}</div>
+                <div className="text-sm font-semibold text-gray-600">
+                  {status}
+                </div>
               </div>
             </div>
           ))}
@@ -118,7 +120,7 @@ const MyOrders = () => {
         <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-200/50 p-6 mb-8">
           <div className="flex flex-col lg:flex-row gap-4 items-center">
             <div className="relative flex-1 w-full">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl blur-sm opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-indigo-500/5 rounded-2xl blur-sm opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 z-10" />
               <input
                 type="text"
@@ -130,7 +132,7 @@ const MyOrders = () => {
             </div>
 
             <div className="relative w-full lg:w-64">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl blur-sm opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-indigo-500/5 rounded-2xl blur-sm opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               <Filter className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 z-10" />
               <select
                 className="relative w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 bg-white/50 backdrop-blur-sm hover:border-gray-300 appearance-none z-10"
@@ -173,7 +175,7 @@ const MyOrders = () => {
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+                        <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg">
                           <Package className="w-5 h-5 text-white" />
                         </div>
                         <div>
@@ -227,7 +229,7 @@ const MyOrders = () => {
                             <Package className="w-6 h-6 text-gray-400 m-auto" />
                           )}
                         </div>
-                        <div className="absolute -top-2 -right-2 bg-gradient-to-br from-blue-500 to-purple-600 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shadow-lg">
+                        <div className="absolute -top-2 -right-2 bg-gradient-to-br from-blue-500 to-indigo-600 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shadow-lg">
                           {item.quantity}
                         </div>
                       </div>
@@ -236,7 +238,8 @@ const MyOrders = () => {
                           {item.product.name}
                         </h4>
                         <div className="text-sm text-gray-600 mt-1">
-                          <span className="font-semibold">৳{item.price}</span> × {item.quantity}
+                          <span className="font-semibold">৳{item.price}</span> ×{" "}
+                          {item.quantity}
                         </div>
                         <div className="text-xs text-gray-500">
                           {item.product.brand} • {item.product.category}
@@ -244,9 +247,7 @@ const MyOrders = () => {
                       </div>
                       <div className="text-right">
                         <div className="text-sm text-gray-500">Item Total</div>
-                        <div className="text-xl">
-                          ৳{item.totalPrice}
-                        </div>
+                        <div className="text-xl">৳{item.totalPrice}</div>
                       </div>
                     </div>
                   ))}
@@ -281,7 +282,7 @@ const MyOrders = () => {
                   setSearchTerm("");
                   setStatusFilter("all");
                 }}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
               >
                 Clear Filters
               </button>

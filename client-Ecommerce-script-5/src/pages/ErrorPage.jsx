@@ -4,7 +4,7 @@ export default function ErrorPage() {
   const error = useRouteError();
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-purple-100 to-purple-50 px-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-indigo-100 to-indigo-50 px-4">
       {/* Heading */}
       <h1 className="text-6xl font-extrabold text-red-600 mb-4">
         {error.status}

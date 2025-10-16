@@ -83,7 +83,7 @@ export default function Login() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="flex min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       {/* Left side - Image */}
       <div className="hidden lg:flex w-1/2 items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary to-primary z-10"></div>
@@ -124,7 +124,7 @@ export default function Login() {
             <div className="flex justify-center mb-2">
               <Logo w="100px" />
             </div>
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <Sparkles className="w-4 h-4" />
               Welcome Back
             </div>
@@ -142,7 +142,7 @@ export default function Login() {
                 Email Address
               </label>
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl blur-sm opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-indigo-500/5 rounded-2xl blur-sm opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 <input
                   type="email"
                   {...register("email", { required: "Email is required" })}
@@ -161,11 +161,11 @@ export default function Login() {
             {/* Password */}
             <div className="space-y-2">
               <label className="flex text-sm font-semibold text-gray-700 items-center gap-2">
-                <Lock className="w-4 h-4 text-purple-500" />
+                <Lock className="w-4 h-4 text-indigo-500" />
                 Password
               </label>
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl blur-sm opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-indigo-500/5 rounded-2xl blur-sm opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 <input
                   type={showPassword ? "text" : "password"}
                   {...register("password", {

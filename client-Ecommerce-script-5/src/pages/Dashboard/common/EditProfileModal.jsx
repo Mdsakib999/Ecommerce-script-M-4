@@ -1,8 +1,17 @@
-import { Plus, X, User, Mail, Phone, MapPin, Camera, Shield } from "lucide-react";
+import {
+  Camera,
+  Mail,
+  MapPin,
+  Phone,
+  Plus,
+  Shield,
+  User,
+  X,
+} from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useUpdateUserMutation } from "../../../redux/app/services/user/userApi";
 import toast from "react-hot-toast";
+import { useUpdateUserMutation } from "../../../redux/app/services/user/userApi";
 
 export default function EditProfileModal({
   editProfile,
@@ -116,7 +125,7 @@ export default function EditProfileModal({
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg">
               <User className="w-5 h-5 text-white" />
             </div>
             <div>
@@ -151,7 +160,7 @@ export default function EditProfileModal({
             <div className="relative group">
               <div
                 onClick={() => !isLoading && fileInputRef.current.click()}
-                className={`w-32 h-32 rounded-3xl shadow-2xl cursor-pointer overflow-hidden border-4 border-white/50 bg-gradient-to-br from-gray-100 to-gray-200 hover:from-blue-50 hover:to-purple-50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl ${
+                className={`w-32 h-32 rounded-3xl shadow-2xl cursor-pointer overflow-hidden border-4 border-white/50 bg-gradient-to-br from-gray-100 to-gray-200 hover:from-blue-50 hover:to-indigo-50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl ${
                   isLoading ? "opacity-50 cursor-not-allowed" : "group"
                 }`}
               >
@@ -171,10 +180,10 @@ export default function EditProfileModal({
                   <Camera className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0" />
                 </div>
               </div>
-              
+
               {/* Add Photo Badge */}
               {!editImage && (
-                <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
+                <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
                   <Plus className="w-5 h-5 text-white" />
                 </div>
               )}
@@ -238,7 +247,7 @@ export default function EditProfileModal({
             {/* Phone */}
             <div className="space-y-2">
               <label className="flex text-sm font-semibold text-gray-700 items-center gap-2">
-                <Phone className="w-4 h-4 text-purple-500" />
+                <Phone className="w-4 h-4 text-indigo-500" />
                 Phone Number
               </label>
               <input
@@ -317,7 +326,7 @@ export default function EditProfileModal({
             </button>
             <button
               type="submit"
-              className="px-6 py-3 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:hover:scale-100 flex items-center gap-2"
+              className="px-6 py-3 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:hover:scale-100 flex items-center gap-2"
               disabled={isLoading}
             >
               {isLoading ? (

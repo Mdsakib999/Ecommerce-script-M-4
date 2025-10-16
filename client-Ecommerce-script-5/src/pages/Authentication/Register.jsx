@@ -190,7 +190,7 @@ export default function Register() {
             {/* Password */}
             <div className="space-y-2">
               <label className="flex text-sm font-semibold text-gray-700 items-center gap-2">
-                <Lock className="w-4 h-4 text-purple-500" />
+                <Lock className="w-4 h-4 text-indigo-500" />
                 Password
               </label>
               <div className="relative">

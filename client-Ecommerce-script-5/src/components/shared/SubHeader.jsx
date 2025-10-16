@@ -3,11 +3,11 @@ import Button from "../ui/Button";
 
 export default function SubHeader() {
   return (
-    <div className="bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 border-b border-blue-100/50 py-3 relative overflow-hidden">
+    <div className="bg-gradient-to-r from-blue-50 via-indigo-50 to-indigo-50 border-b border-blue-100/50 py-3 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-0 w-20 h-20 bg-blue-200/20 rounded-full blur-xl animate-float"></div>
-        <div className="absolute bottom-0 right-0 w-24 h-24 bg-purple-200/20 rounded-full blur-xl animate-float-delayed"></div>
+        <div className="absolute bottom-0 right-0 w-24 h-24 bg-indigo-200/20 rounded-full blur-xl animate-float-delayed"></div>
         <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-indigo-200/15 rounded-full blur-lg animate-pulse"></div>
       </div>
 
@@ -23,7 +23,7 @@ export default function SubHeader() {
               <span className="text-sm font-medium text-gray-600">
                 Deliver to
               </span>
-              <span className="text-sm font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="text-sm font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 Chattogram 4000
               </span>
             </div>
@@ -60,11 +60,7 @@ export default function SubHeader() {
             >
               Home
             </Button>
-            <Button
-              type="outline"
-              to="/about"
-              className=""
-            >
+            <Button type="outline" to="/about" className="">
               About
             </Button>
             <Button

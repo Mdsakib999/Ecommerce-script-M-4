@@ -18,7 +18,7 @@ export default function About() {
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-500/20 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-purple-500/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+          <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-indigo-500/20 rounded-full blur-xl animate-pulse delay-1000"></div>
           <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-cyan-500/20 rounded-full blur-xl animate-pulse delay-500"></div>
         </div>
 
@@ -35,7 +35,7 @@ export default function About() {
           {/* Main Heading */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white capitalize leading-tight">
             About{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
               BuyHive
             </span>
           </h1>
@@ -43,7 +43,7 @@ export default function About() {
           {/* Decorative Elements */}
           <div className="flex items-center gap-4 mt-6">
             <div className="w-3 h-3 bg-blue-400 rounded-full animate-bounce"></div>
-            <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce delay-150"></div>
+            <div className="w-2 h-2 bg-indigo-400 rounded-full animate-bounce delay-150"></div>
             <div className="w-1 h-1 bg-cyan-400 rounded-full animate-bounce delay-300"></div>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function About() {
       <div className="relative px-4 max-w-4xl mx-auto text-center mb-20">
         {/* Background Decoration */}
         <div className="absolute -top-10 -left-10 w-20 h-20 bg-blue-100 rounded-full blur-xl opacity-60"></div>
-        <div className="absolute -bottom-10 -right-10 w-20 h-20 bg-purple-100 rounded-full blur-xl opacity-60"></div>
+        <div className="absolute -bottom-10 -right-10 w-20 h-20 bg-indigo-100 rounded-full blur-xl opacity-60"></div>
 
         <div className="relative z-10">
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed bg-white/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-200/50 shadow-sm">
@@ -81,7 +81,7 @@ export default function About() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Our{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Achievements
             </span>
           </h2>
@@ -101,7 +101,7 @@ export default function About() {
             {
               number: 12,
               label: "Years Of Experience",
-              color: "from-purple-500 to-pink-500",
+              color: "from-indigo-500 to-pink-500",
             },
             {
               number: 2500,

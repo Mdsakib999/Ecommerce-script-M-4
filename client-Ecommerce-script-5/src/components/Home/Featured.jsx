@@ -1,19 +1,19 @@
-import { useState, useRef, useEffect } from 'react';
 import {
+  Camera,
   ChevronLeft,
   ChevronRight,
-  Smartphone,
-  Headphones,
-  Camera,
-  Watch,
-  Speaker,
   Gamepad2,
+  Headphones,
   Laptop,
-  Tablet,
+  Smartphone,
   Sparkles,
-  Zap
-} from 'lucide-react';
-import Countup from '../shared/Countup';
+  Speaker,
+  Tablet,
+  Watch,
+  Zap,
+} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import Countup from "../shared/Countup";
 
 const Featured = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -24,117 +24,119 @@ const Featured = () => {
   const categories = [
     {
       id: 1,
-      name: 'Smartphones',
+      name: "Smartphones",
       items: 24,
       icon: Smartphone,
       image:
-        'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=150&h=150&fit=crop&crop=center',
-      gradient: 'from-slate-900 via-slate-800 to-slate-700',
-      iconColor: 'text-slate-200',
-      shadowColor: 'shadow-slate-500/30',
-      glowColor: 'hover:shadow-slate-500/40'
+        "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=150&h=150&fit=crop&crop=center",
+      gradient: "from-slate-900 via-slate-800 to-slate-700",
+      iconColor: "text-slate-200",
+      shadowColor: "shadow-slate-500/30",
+      glowColor: "hover:shadow-slate-500/40",
     },
     {
       id: 2,
-      name: 'Audio & Headphones',
+      name: "Audio & Headphones",
       items: 18,
       icon: Headphones,
       image:
-        'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=150&h=150&fit=crop&crop=center',
-      gradient: 'from-purple-600 via-purple-700 to-purple-800',
-      iconColor: 'text-purple-100',
-      shadowColor: 'shadow-purple-500/40',
-      glowColor: 'hover:shadow-purple-500/60',
-      featured: true
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=150&h=150&fit=crop&crop=center",
+      gradient: "from-indigo-600 via-indigo-700 to-indigo-800",
+      iconColor: "text-indigo-100",
+      shadowColor: "shadow-indigo-500/40",
+      glowColor: "hover:shadow-indigo-500/60",
+      featured: true,
     },
     {
       id: 3,
-      name: 'Cameras',
+      name: "Cameras",
       items: 12,
       icon: Camera,
       image:
-        'https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=150&h=150&fit=crop&crop=center',
-      gradient: 'from-emerald-500 via-emerald-600 to-teal-600',
-      iconColor: 'text-emerald-100',
-      shadowColor: 'shadow-emerald-500/40',
-      glowColor: 'hover:shadow-emerald-500/60'
+        "https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=150&h=150&fit=crop&crop=center",
+      gradient: "from-emerald-500 via-emerald-600 to-teal-600",
+      iconColor: "text-emerald-100",
+      shadowColor: "shadow-emerald-500/40",
+      glowColor: "hover:shadow-emerald-500/60",
     },
     {
       id: 4,
-      name: 'Smart Watches',
+      name: "Smart Watches",
       items: 16,
       icon: Watch,
       image:
-        'https://images.unsplash.com/photo-1544117519-31a4b719223d?w=150&h=150&fit=crop&crop=center',
-      gradient: 'from-rose-500 via-rose-600 to-pink-600',
-      iconColor: 'text-rose-100',
-      shadowColor: 'shadow-rose-500/40',
-      glowColor: 'hover:shadow-rose-500/60'
+        "https://images.unsplash.com/photo-1544117519-31a4b719223d?w=150&h=150&fit=crop&crop=center",
+      gradient: "from-rose-500 via-rose-600 to-pink-600",
+      iconColor: "text-rose-100",
+      shadowColor: "shadow-rose-500/40",
+      glowColor: "hover:shadow-rose-500/60",
     },
     {
       id: 5,
-      name: 'Speakers',
+      name: "Speakers",
       items: 14,
       icon: Speaker,
       image:
-        'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=150&h=150&fit=crop&crop=center',
-      gradient: 'from-amber-500 via-amber-600 to-orange-600',
-      iconColor: 'text-amber-100',
-      shadowColor: 'shadow-amber-500/40',
-      glowColor: 'hover:shadow-amber-500/60'
+        "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=150&h=150&fit=crop&crop=center",
+      gradient: "from-amber-500 via-amber-600 to-orange-600",
+      iconColor: "text-amber-100",
+      shadowColor: "shadow-amber-500/40",
+      glowColor: "hover:shadow-amber-500/60",
     },
     {
       id: 6,
-      name: 'Gaming Accessories',
+      name: "Gaming Accessories",
       items: 22,
       icon: Gamepad2,
       image:
-        'https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=150&h=150&fit=crop&crop=center',
-      gradient: 'from-indigo-500 via-indigo-600 to-purple-600',
-      iconColor: 'text-indigo-100',
-      shadowColor: 'shadow-indigo-500/40',
-      glowColor: 'hover:shadow-indigo-500/60'
+        "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=150&h=150&fit=crop&crop=center",
+      gradient: "from-indigo-500 via-indigo-600 to-indigo-600",
+      iconColor: "text-indigo-100",
+      shadowColor: "shadow-indigo-500/40",
+      glowColor: "hover:shadow-indigo-500/60",
     },
     {
       id: 7,
-      name: 'Laptops & PCs',
+      name: "Laptops & PCs",
       items: 20,
       icon: Laptop,
       image:
-        'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=150&h=150&fit=crop&crop=center',
-      gradient: 'from-gray-700 via-gray-800 to-gray-900',
-      iconColor: 'text-gray-200',
-      shadowColor: 'shadow-gray-500/30',
-      glowColor: 'hover:shadow-gray-500/50'
+        "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=150&h=150&fit=crop&crop=center",
+      gradient: "from-gray-700 via-gray-800 to-gray-900",
+      iconColor: "text-gray-200",
+      shadowColor: "shadow-gray-500/30",
+      glowColor: "hover:shadow-gray-500/50",
     },
     {
       id: 8,
-      name: 'Tablets',
+      name: "Tablets",
       items: 15,
       icon: Tablet,
       image:
-        'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=150&h=150&fit=crop&crop=center',
-      gradient: 'from-cyan-500 via-cyan-600 to-blue-600',
-      iconColor: 'text-cyan-100',
-      shadowColor: 'shadow-cyan-500/40',
-      glowColor: 'hover:shadow-cyan-500/60'
-    }
+        "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=150&h=150&fit=crop&crop=center",
+      gradient: "from-cyan-500 via-cyan-600 to-blue-600",
+      iconColor: "text-cyan-100",
+      shadowColor: "shadow-cyan-500/40",
+      glowColor: "hover:shadow-cyan-500/60",
+    },
   ];
 
   const updateScrollButtons = () => {
     if (scrollContainerRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      const { scrollLeft, scrollWidth, clientWidth } =
+        scrollContainerRef.current;
       setCanScrollLeft(scrollLeft > 10);
       setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10);
     }
   };
-    const scrollToIndex = (index) => {
+  const scrollToIndex = (index) => {
     if (scrollContainerRef.current) {
-      const itemWidth = scrollContainerRef.current.scrollWidth / categories.length;
+      const itemWidth =
+        scrollContainerRef.current.scrollWidth / categories.length;
       const scrollPosition = itemWidth * index;
       scrollContainerRef.current.scrollTo({
         left: scrollPosition,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
   };
@@ -143,7 +145,7 @@ const Featured = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({
         left: -250,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
   };
@@ -152,7 +154,7 @@ const Featured = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({
         left: 250,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
   };
@@ -161,11 +163,11 @@ const Featured = () => {
     const container = scrollContainerRef.current;
     if (!container) return;
     updateScrollButtons();
-    container.addEventListener('scroll', updateScrollButtons);
-    window.addEventListener('resize', updateScrollButtons);
+    container.addEventListener("scroll", updateScrollButtons);
+    window.addEventListener("resize", updateScrollButtons);
     return () => {
-      container.removeEventListener('scroll', updateScrollButtons);
-      window.removeEventListener('resize', updateScrollButtons);
+      container.removeEventListener("scroll", updateScrollButtons);
+      window.removeEventListener("resize", updateScrollButtons);
     };
   }, []);
 
@@ -174,13 +176,13 @@ const Featured = () => {
       {/* Header Section */}
       <div className="text-center mb-12 lg:mb-16 relative z-10">
         <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-lg px-6 py-3 rounded-2xl border border-gray-200/50 shadow-lg mb-6">
-          <Sparkles className="w-5 h-5 text-purple-500" />
+          <Sparkles className="w-5 h-5 text-indigo-500" />
           <span className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
             Featured Collections
           </span>
         </div>
 
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 bg-clip-text text-transparent mb-4 leading-tight">
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black bg-gradient-to-r from-gray-900 via-indigo-900 to-gray-900 bg-clip-text text-transparent mb-4 leading-tight">
           Premium Categories
         </h2>
         <p className="text-gray-600 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed font-medium">
@@ -188,9 +190,9 @@ const Featured = () => {
         </p>
 
         <div className="flex justify-center items-center gap-4 mt-6">
-          <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
           <Zap className="w-5 h-5 text-yellow-500 animate-pulse" />
-          <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full"></div>
         </div>
       </div>
 
@@ -202,11 +204,15 @@ const Featured = () => {
           disabled={!canScrollLeft}
           className={`absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 lg:w-14 lg:h-14 rounded-2xl  backdrop-blur-xl shadow-2xl border border-gray-200/50 flex items-center justify-center transition-all duration-500 group ${
             canScrollLeft
-              ? 'hover:bg-white hover:shadow-3xl hover:scale-110 text-gray-700 hover:text-purple-600 hover:border-purple-200/50'
-              : 'text-gray-300 cursor-not-allowed opacity-50'
+              ? "hover:bg-white hover:shadow-3xl hover:scale-110 text-gray-700 hover:text-indigo-600 hover:border-indigo-200/50"
+              : "text-gray-300 cursor-not-allowed opacity-50"
           }`}
         >
-          <ChevronLeft size={26} strokeWidth={2.5} className="group-hover:scale-110 transition-transform" />
+          <ChevronLeft
+            size={26}
+            strokeWidth={2.5}
+            className="group-hover:scale-110 transition-transform"
+          />
         </button>
 
         <button
@@ -214,11 +220,15 @@ const Featured = () => {
           disabled={!canScrollRight}
           className={`absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 lg:w-14 lg:h-14 rounded-2xl  backdrop-blur-xl shadow-2xl border border-gray-200/50 flex items-center justify-center transition-all duration-500 group ${
             canScrollRight
-              ? 'hover:bg-white hover:shadow-3xl hover:scale-110 text-gray-700 hover:text-purple-600 hover:border-purple-200/50'
-              : 'text-gray-300 cursor-not-allowed opacity-50'
+              ? "hover:bg-white hover:shadow-3xl hover:scale-110 text-gray-700 hover:text-indigo-600 hover:border-indigo-200/50"
+              : "text-gray-300 cursor-not-allowed opacity-50"
           }`}
         >
-          <ChevronRight size={26} strokeWidth={2.5} className="group-hover:scale-110 transition-transform" />
+          <ChevronRight
+            size={26}
+            strokeWidth={2.5}
+            className="group-hover:scale-110 transition-transform"
+          />
         </button>
 
         {/* Scrollable Categories */}
@@ -226,9 +236,9 @@ const Featured = () => {
           ref={scrollContainerRef}
           className="flex gap-4 sm:gap-6 lg:gap-8 overflow-x-auto px-6 sm:px-10 lg:px-16 py-8 scroll-smooth scrollbar-hide"
           style={{
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-            WebkitOverflowScrolling: 'touch'
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            WebkitOverflowScrolling: "touch",
           }}
         >
           {categories.map((category) => {
@@ -237,7 +247,7 @@ const Featured = () => {
               <div
                 key={category.id}
                 className="flex-shrink-0 group cursor-pointer transform hover:scale-105 transition-all duration-500"
-                style={{ minWidth: '180px' }}
+                style={{ minWidth: "180px" }}
               >
                 <div className="text-center relative">
                   <div
@@ -260,7 +270,7 @@ const Featured = () => {
                     </div>
                   </div>
 
-                  <h3 className="font-black text-gray-900 text-base sm:text-lg lg:text-xl group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-pink-600 group-hover:bg-clip-text transition-all duration-500 leading-tight">
+                  <h3 className="font-black text-gray-900 text-base sm:text-lg lg:text-xl group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-pink-600 group-hover:bg-clip-text transition-all duration-500 leading-tight">
                     {category.name}
                   </h3>
                   <p className="text-gray-600 text-sm font-semibold bg-white/50 backdrop-blur-sm px-3 py-1 rounded-full border border-gray-200/50 inline-block mt-2">
@@ -272,23 +282,25 @@ const Featured = () => {
           })}
         </div>
       </div>
-            {/* Dots Indicator */}
+      {/* Dots Indicator */}
       <div className="flex justify-center mt-8 lg:mt-12 space-x-3">
-        {Array.from({ length: Math.ceil(categories.length / 2) }).map((_, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              setCurrentIndex(index * 2);
-              scrollToIndex(index * 2);
-            }}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              Math.floor(currentIndex / 2) === index
-                ? 'bg-gradient-to-r from-blue-500 to-red-500 w-8 shadow-lg'
-                : 'bg-gray-300 w-2 hover:bg-gray-400'
-            }`}
-            aria-label={`Go to page ${index + 1}`}
-          />
-        ))}
+        {Array.from({ length: Math.ceil(categories.length / 2) }).map(
+          (_, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                setCurrentIndex(index * 2);
+                scrollToIndex(index * 2);
+              }}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                Math.floor(currentIndex / 2) === index
+                  ? "bg-gradient-to-r from-blue-500 to-red-500 w-8 shadow-lg"
+                  : "bg-gray-300 w-2 hover:bg-gray-400"
+              }`}
+              aria-label={`Go to page ${index + 1}`}
+            />
+          )
+        )}
       </div>
     </div>
   );

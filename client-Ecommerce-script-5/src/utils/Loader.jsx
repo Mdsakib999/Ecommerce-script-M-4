@@ -19,7 +19,7 @@ export default function Loader() {
 
         {/* Loading text with gradient */}
         <div className="text-center">
-          <p className="text-xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+          <p className="text-xl font-bold bg-gradient-to-r from-primary to-indigo-600 bg-clip-text text-transparent">
             Preparing BuyHive
           </p>
           <p className="text-gray-600 mt-2 font-medium">

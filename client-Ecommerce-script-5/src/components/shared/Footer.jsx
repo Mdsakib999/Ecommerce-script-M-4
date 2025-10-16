@@ -33,7 +33,7 @@ export default function Footer() {
               </Link>
 
               <div className="space-y-3">
-                <p className="text-xl font-bold bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
+                <p className="text-xl font-bold bg-gradient-to-r from-blue-200 to-indigo-200 bg-clip-text text-transparent">
                   BuyHive Industries Ltd.
                 </p>
                 <p className="text-gray-300 w-60 leading-relaxed text-sm">
@@ -134,7 +134,7 @@ export default function Footer() {
 
               <form className="space-y-3">
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl blur-sm group-hover:blur-md transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 rounded-xl blur-sm group-hover:blur-md transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
                   <div className="relative flex items-center bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-600/50 group-hover:border-blue-400/30 transition-all duration-300 overflow-hidden">
                     <Mail className="absolute left-3 w-4 h-4 text-gray-400" />
                     <input
@@ -146,7 +146,7 @@ export default function Footer() {
                     />
                     <button
                       type="submit"
-                      className="flex-shrink-0 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-4 py-3 font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
+                      className="flex-shrink-0 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white px-4 py-3 font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
                     >
                       Subscribe
                     </button>
@@ -179,7 +179,7 @@ export default function Footer() {
                     {
                       Icon: Instagram,
                       color:
-                        "hover:bg-gradient-to-r hover:from-purple-500 hover:via-pink-500 hover:to-orange-500 hover:border-transparent",
+                        "hover:bg-gradient-to-r hover:from-indigo-500 hover:via-pink-500 hover:to-orange-500 hover:border-transparent",
                       label: "Instagram",
                     },
                   ].map(({ Icon, color, label }) => (

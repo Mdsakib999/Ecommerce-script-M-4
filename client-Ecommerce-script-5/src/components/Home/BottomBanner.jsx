@@ -1,10 +1,9 @@
-import React from "react";
 import { ChevronRight } from "lucide-react";
-import {Link} from 'react-router';
+import { Link } from "react-router";
 export default function BottomBanner() {
   return (
     // Bottom Promotional Banner
-    <div className="relative bg-gradient-to-r from-purple-600 via-purple-500 to-purple-400 overflow-hidden">
+    <div className="relative bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-400 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-red-500/20"></div>
 
       <div className="relative z-10 px-8 py-6 flex flex-wrap items-center justify-between gap-6">
@@ -41,7 +40,9 @@ export default function BottomBanner() {
 
         {/* Right Side - CTA */}
         <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-full flex items-center space-x-3 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-200 animate-pulse">
-          <Link to="products"><span className="text-xl">SHOP NOW</span></Link>
+          <Link to="products">
+            <span className="text-xl">SHOP NOW</span>
+          </Link>
           <div className="bg-white rounded-full p-2">
             <ChevronRight className="w-6 h-6 text-red-600" />
           </div>

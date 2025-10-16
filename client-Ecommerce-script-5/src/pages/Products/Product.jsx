@@ -1,5 +1,5 @@
 import { ShoppingCart } from "lucide-react";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router";
 import { addToCart } from "../../redux/app/features/cart/cartSlice";
 import toast from "react-hot-toast";
@@ -7,7 +7,7 @@ export default function Product({ product }) {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
   const existingItem = cartItems.find((item) => item._id === product._id);
-    // existingItem?.cartQuantity is how many user added already
+  // existingItem?.cartQuantity is how many user added already
   const hasReachedStock =
     existingItem && existingItem.cartQuantity >= product.quantity;
   const isInCart = !!existingItem;
@@ -18,7 +18,7 @@ export default function Product({ product }) {
     }
 
     dispatch(addToCart(product));
-    console.log(product)
+    console.log(product);
     if (!isInCart) {
       toast.success(<h1 className="text-center font-serif">Added to cart</h1>);
     } else {
@@ -28,7 +28,7 @@ export default function Product({ product }) {
       });
     }
   };
-console.log(product)
+  console.log(product);
   return (
     <Link key={product?.id} to={`/product/${product?._id}`}>
       <div className="w-full mt-2 mx-auto max-w-96 bg-white rounded-3xl shadow-lg hover:shadow-2xl overflow-hidden relative transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 border border-gray-100/50 backdrop-blur-sm">
@@ -89,8 +89,8 @@ console.log(product)
               <button
                 onClick={(e) => {
                   e.preventDefault(),
-                  e.stopPropagation(),
-                  handleAddToCart(product);
+                    e.stopPropagation(),
+                    handleAddToCart(product);
                 }}
                 disabled={hasReachedStock}
                 className={`w-full cursor-pointer rounded-xl py-2 px-4 font-semibold text-sm flex items-center justify-center space-x-2 transition-colors ${
@@ -101,8 +101,11 @@ console.log(product)
                     : "bg-gray-200 hover:bg-gray-700 hover:text-white"
                 }`}
               >
-                <ShoppingCart size={18} className="group-hover:scale-110 transition-transform" />
-                                <span>
+                <ShoppingCart
+                  size={18}
+                  className="group-hover:scale-110 transition-transform"
+                />
+                <span>
                   {hasReachedStock
                     ? "Out of Stock"
                     : isInCart
@@ -115,7 +118,7 @@ console.log(product)
         </div>
 
         {/* Hover Glow Effect */}
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/5 to-purple-500/5 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/5 to-indigo-500/5 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
       </div>
     </Link>
   );

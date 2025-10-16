@@ -1,6 +1,6 @@
 import { Minus, Plus } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import Button from '../components/ui/Button';
+import Button from "../components/ui/Button";
 export default function Faq() {
   const faqs = [
     {
@@ -46,12 +46,12 @@ export default function Faq() {
     <div className="py-20 px-4 max-w-4xl mx-auto">
       {/* Header Section */}
       <div className="text-center mb-16">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-6 shadow-lg">
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl mb-6 shadow-lg">
           <span className="text-2xl">💡</span>
         </div>
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Frequently Asked 
-          <span className="bg-gradient-to-r pl-4 from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          Frequently Asked
+          <span className="bg-gradient-to-r pl-4 from-blue-600 to-indigo-600 bg-clip-text text-transparent">
             Questions
           </span>
         </h2>
@@ -75,7 +75,7 @@ export default function Faq() {
             >
               <div className="flex items-start space-x-4 flex-1">
                 {/* Number Indicator */}
-                <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg flex items-center justify-center text-blue-600 font-semibold text-sm mt-1">
+                <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-lg flex items-center justify-center text-blue-600 font-semibold text-sm mt-1">
                   {index + 1}
                 </div>
 
@@ -120,7 +120,7 @@ export default function Faq() {
               <div className="px-8 pb-8">
                 <div className="flex space-x-4">
                   {/* Vertical Accent Line */}
-                  <div className="flex-shrink-0 w-1 bg-gradient-to-b from-blue-200 to-purple-200 rounded-full"></div>
+                  <div className="flex-shrink-0 w-1 bg-gradient-to-b from-blue-200 to-indigo-200 rounded-full"></div>
 
                   {/* Answer Text */}
                   <div className="flex-1">

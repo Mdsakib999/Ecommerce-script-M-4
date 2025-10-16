@@ -1,9 +1,9 @@
-import { ChevronLeft, ChevronRight, ShoppingCart } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import Product from "../../pages/Products/Product";
 import { useGetAllProductQuery } from "../../redux/app/services/product/productApi";
 import Loader from "../../utils/Loader";
-import Product from "../../pages/Products/Product";
 
 export default function RecommendedProduct() {
   const params = {
@@ -48,7 +48,7 @@ export default function RecommendedProduct() {
   return (
     <div className="max-w-7xl mx-auto px-4">
       <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 mb-6">
-        <h2 className="text-2xl md:text-4xl bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 bg-clip-text text-transparent font-semibold">
+        <h2 className="text-2xl md:text-4xl bg-gradient-to-r from-gray-900 via-indigo-900 to-gray-900 bg-clip-text text-transparent font-semibold">
           Recommended for you
         </h2>
 

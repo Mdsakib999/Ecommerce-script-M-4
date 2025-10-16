@@ -11,9 +11,8 @@ export default function Banner() {
       badge: "10.10 BRAND RUSH",
       title: "WHAT'S HAPPENING",
       subtitle: "Endless Prizes, Unbeatable Prices",
-      backgroundImage: "https://images.unsplash.com/photo-1607082350899-7e105aa886ae?w=1200&h=600&fit=crop&crop=center",
       productImage: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=400&fit=crop",
-      gradient: "from-purple-600 via-purple-500 to-pink-500",
+      gradient: "from-purple-300 via-purple-200 to-pink-200",
       productType: "sunglasses"
     },
     {
@@ -21,9 +20,8 @@ export default function Banner() {
       badge: "FLASH SALE",
       title: "MEGA DEALS",
       subtitle: "Limited Time Offers, Maximum Savings",
-      backgroundImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=600&fit=crop&crop=center",
       productImage: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop",
-      gradient: "from-blue-600 via-blue-500 to-cyan-500",
+      gradient: "from-blue-300 via-blue-200 to-cyan-200",
       productType: "headphones"
     },
     {
@@ -31,9 +29,8 @@ export default function Banner() {
       badge: "NEW ARRIVALS",
       title: "TRENDING NOW",
       subtitle: "Fresh Styles Just Dropped",
-      backgroundImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=600&fit=crop&crop=center",
       productImage: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop",
-      gradient: "from-orange-500 via-orange-400 to-red-500",
+      gradient: "from-orange-200 via-orange-300 to-red-200",
       productType: "shoes"
     }
   ];
@@ -71,7 +68,7 @@ export default function Banner() {
             }}
           >
             {/* Gradient Overlay */}
-            <div className={`absolute inset-0 bg-gradient-to-r ${slide.gradient} opacity-90`}></div>
+            <div className={`absolute inset-0 bg-gradient-to-r ${slide.gradient} opacity-60`}></div>
             
             {/* Dark Overlay for Better Text Readability */}
             <div className="absolute inset-0 bg-black/30"></div>

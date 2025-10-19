@@ -99,12 +99,15 @@ export default function Banner() {
                 </div>
 
                 {/* CTA Button */}
+                <div className="w-max">
               <Link to="/products">
-                              <button className="bg-indigo-300 hover:bg-ultra-violet text-gray-700 hover:text-white font-black px-8 py-4 rounded-xl text-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 group">
+                              <button className="bg-indigo-300 hover:bg-ultra-violet text-gray-700 hover:text-white font-black px-8 py-4 rounded-xl text-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 group cursor-pointer">
                   <ShoppingCart className="w-6 h-6 group-hover:scale-110 transition-transform" />
                   <span>Shop Now</span>
                 </button>
               </Link>
+                </div>
+
 
                 {/* Slide Indicators for Mobile */}
                 <div className="flex lg:hidden space-x-3 pt-4">

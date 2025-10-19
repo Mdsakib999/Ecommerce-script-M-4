@@ -31,7 +31,7 @@ export default function Product({ product }) {
   console.log(product);
   return (
     <Link key={product?.id} to={`/product/${product?._id}`}>
-      <div className="w-full mt-2 mx-auto max-w-96 bg-white rounded-3xl shadow-lg hover:shadow-2xl overflow-hidden relative transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 border border-gray-100/50 backdrop-blur-sm">
+      <div className="w-full mt-2 mx-auto max-w-96 bg-white backdrop-blur-sm rounded-3xl overflow-hidden relative transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 border-2 border-gray-200 hover:border-indigo-600">
         {/* Sale Badge */}
         {product?.discountPrice && (
           <div className="absolute top-3 left-3 z-20 bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-black px-4 py-2 rounded-full shadow-2xl border-2 border-white">
@@ -41,9 +41,9 @@ export default function Product({ product }) {
 
         {/* Product Image Container */}
         <div className="relative p-4 pb-2">
-          <div className="relative w-40 h-40 mx-auto mb-2">
+          <div className="relative w-full h-full mb-2">
             {/* Image Container */}
-            <div className="relative w-full h-full rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 p-4 shadow-inner border border-gray-200/30">
+            <div className="relative w-full h-72 rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 p-4 shadow-inner border border-gray-200/30">
               <img
                 src={product?.images[0]}
                 alt={product?.name}
@@ -55,7 +55,7 @@ export default function Product({ product }) {
 
         {/* Product Info */}
         <div className="p-6 pt-2">
-          <div className="text-center space-y-2">
+          <div className="pl-2 space-y-2">
             {/* Category */}
             <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide bg-gray-100/50 rounded-full px-3 py-1 inline-block">
               {product?.category}
@@ -67,13 +67,13 @@ export default function Product({ product }) {
             </h2>
 
             {/* Price Section */}
-            <div className="flex justify-center items-baseline space-x-2">
+            <div className="flex items-center space-x-2">
               {product?.discountPrice ? (
                 <>
                   <p className="text-xl font-black bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
                     ${product?.discountPrice}
                   </p>
-                  <p className="text-sm text-gray-400 line-through font-medium">
+                  <p className="text-md text-gray-400 line-through font-medium">
                     ${product?.price}
                   </p>
                 </>

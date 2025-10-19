@@ -33,3 +33,14 @@ html {
 .swiper-pagination-bullet {
   background-color: oklch(67.3% 0.182 276.935) !important;
 }
+
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  padding: 24px;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

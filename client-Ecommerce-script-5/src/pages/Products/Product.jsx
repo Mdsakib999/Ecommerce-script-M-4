@@ -43,11 +43,11 @@ export default function Product({ product }) {
         <div className="relative p-4 pb-2">
           <div className="relative w-full h-full mb-2">
             {/* Image Container */}
-            <div className="relative w-full h-72 rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 p-4 shadow-inner border border-gray-200/30">
+            <div className="relative w-full h-54 rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 p-4 shadow-inner border border-gray-200/30">
               <img
                 src={product?.images[0]}
                 alt={product?.name}
-                className="w-full h-full object-cover rounded-2xl transform transition-transform duration-500 hover:scale-105"
+                className="w-full h-full object-fit rounded-2xl transform transition-transform duration-500 hover:scale-105"
               />
             </div>
           </div>
@@ -70,7 +70,7 @@ export default function Product({ product }) {
             <div className="flex items-center space-x-2">
               {product?.discountPrice ? (
                 <>
-                  <p className="text-xl font-black bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
+                  <p className="text-lg font-black bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
                     ${product?.discountPrice}
                   </p>
                   <p className="text-md text-gray-400 line-through font-medium">

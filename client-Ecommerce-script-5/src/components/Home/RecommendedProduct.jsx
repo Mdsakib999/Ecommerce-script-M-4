@@ -59,7 +59,7 @@ export default function RecommendedProduct() {
         </Link>
       </div>
 
-      <div className="py-8 relative">
+      <div className="py-4 relative">
         {/* Left Arrow */}
         <button
           onClick={handlePrev}
@@ -70,9 +70,9 @@ export default function RecommendedProduct() {
         </button>
 
         {/* Slider */}
-        <div className="overflow-hidden">
+        <div className="overflow-hidden py-4">
           <div
-            className="flex transition-transform duration-700 ease-in-out mb-6"
+            className="flex gap-2 transition-transform duration-700 ease-in-out mb-6"
             style={{
               width: `${(products.length * 100) / visibleCount}%`,
               transform: `translateX(-${

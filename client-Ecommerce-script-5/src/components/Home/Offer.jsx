@@ -109,7 +109,6 @@ const Offer = () => {
       {/* Offers Slider */}
       <Swiper
         slidesPerView={1}
-        spaceBetween={30}
         modules={[Pagination, Autoplay]}
         breakpoints={{
           640: { slidesPerView: 1 },
@@ -121,7 +120,7 @@ const Offer = () => {
           clickable: true,
           bulletClass: "swiper-pagination-bullet !bg-gray-300 !opacity-100",
           bulletActiveClass:
-            "swiper-pagination-bullet-active !bg-gradient-to-r from-indigo-500 to-pink-500",
+            "swiper-pagination-bullet-active !bg-indigo-400",
         }}
         autoplay={{
           delay: 3000,
@@ -147,9 +146,9 @@ const Offer = () => {
                 </div>
 
                 {/* Discount Badge */}
-                <div className="absolute top-4 left-4">
+                <div className="absolute z-10 top-4 left-4">
                   <div
-                    className={`bg-gradient-to-r ${offer.accentColor} text-white px-3 py-1 rounded-full text-sm font-bold shadow-md`}
+                    className={`bg-gradient-to-r ${offer.accentColor}  text-white px-3 py-1 rounded-full text-sm font-bold shadow-md`}
                   >
                     SAVE UP TO
                   </div>
@@ -166,7 +165,7 @@ const Offer = () => {
                 <Button
                   to="/products"
                   className={`
-                    w-full mt-auto py-3 px-6 rounded-xl font-semibold 
+                    w-full mt-auto  rounded-xl font-semibold 
                     transition-all duration-300 transform hover:scale-105 
                     shadow-md hover:shadow-lg border-0
                     ${offer.buttonStyle}

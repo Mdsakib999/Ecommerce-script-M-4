@@ -154,7 +154,7 @@ export default function ContactPage() {
             {/* Submit */}
             <button
               type="submit"
-              className="flex mx-auto cursor-pointer items-center ease-in-out duration-300 transition-all  text-md justify-center w-full rounded-md bg-transparent py-2  px-4 border border-indigo-400 text-indigo-400 hover:bg-indigo-400 font-semibold hover:text-white hover:border-transparent"
+              className="flex mx-auto cursor-pointer items-center ease-in-out duration-300 transition-all  text-md justify-center w-full bg-indigo-500 py-2  px-4 border border-indigo-400 text-white hover:bg-ultra-violet font-semibold hover:text-white hover:scale-105 hover:border-transparent rounded"
             >
               Send Message
             </button>

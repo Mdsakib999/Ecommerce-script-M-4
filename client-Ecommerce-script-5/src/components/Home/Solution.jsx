@@ -67,20 +67,20 @@ const features = [
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-4">
-              <div className="text-center">
+            <div className="grid ml-4 grid-cols-3 gap-6 pt-4">
+              <div className="">
                 <div className="text-2xl font-bold bg-gradient-to-r from-gray-900 via-indigo-900 to-gray-900 bg-clip-text text-transparent">
                   <Countup>99</Countup>%
                 </div>
                 <div className="text-sm text-gray-600 mt-1">Satisfaction</div>
               </div>
-              <div className="text-center">
+              <div className="">
                 <div className="text-2xl font-bold bg-gradient-to-r from-gray-900 via-indigo-900 to-gray-900 bg-clip-text text-transparent">
                   24/7
                 </div>
                 <div className="text-sm text-gray-600 mt-1">Support</div>
               </div>
-              <div className="text-center">
+              <div className="">
                 <div className="text-2xl font-bold bg-gradient-to-r from-gray-900 via-indigo-900 to-gray-900 bg-clip-text text-transparent">
                   <Countup>1</Countup>M+
                 </div>
@@ -90,7 +90,7 @@ const features = [
           </div>
 
           {/* Right Column - Solution Points */}
-      <div className="w-full p-8">
+      <div className="w-full px-4 sm:px-8 py-8">
         <div className="space-y-8 flex flex-col">
           {features.map((feature, index) => (
             <div key={index} className="space-y-3 p-4 bg-white hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 rounded-xl shadow-md">

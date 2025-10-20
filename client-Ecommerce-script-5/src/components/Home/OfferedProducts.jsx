@@ -93,8 +93,14 @@ export default function OfferedProducts() {
         pagination={{
           type: 'progressbar',
         }}
-        slidesPerView= {2}
+        slidesPerView= {1}
         spaceBetween = {50}
+                breakpoints={{
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 50,
+          },
+        }}
         navigation={{
           nextEl: ".button-next-slide",
           prevEl:".button-prev-slide",
@@ -109,7 +115,7 @@ export default function OfferedProducts() {
               {products?.map((product) => (
                 <SwiperSlide
                   key={product?._id}
-                  className="transform pb-4 transition-transform duration-300"
+                  className="transform !px-0 pb-4 transition-transform duration-300"
                 >
                   <Product product={product} />
                 </SwiperSlide>

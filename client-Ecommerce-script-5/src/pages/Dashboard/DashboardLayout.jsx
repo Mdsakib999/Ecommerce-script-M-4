@@ -54,7 +54,7 @@ const SidebarNavItem = ({ item, isCollapsed, isActive, onClick }) => {
 
 const DashboardHeader = ({ onMenuClick, isOpen }) => (
   <header className="fixed md:hidden top-0 left-0 right-0 h-14 flex items-center justify-between px-4 bg-white shadow z-50">
-    <Logo w="150px" />
+    <Logo w="120px" />
     <button aria-label="Toggle menu" onClick={onMenuClick} className="p-1">
       {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
     </button>

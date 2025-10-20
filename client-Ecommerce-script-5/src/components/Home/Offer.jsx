@@ -111,10 +111,9 @@ const Offer = () => {
         slidesPerView={1}
         modules={[Pagination, Autoplay]}
         breakpoints={{
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-          1280: { slidesPerView: 4 },
+          640: { slidesPerView: 2, spaceBetween: 24 },
+          1024: { slidesPerView: 3, spaceBetween: 16 },
+          1280: { slidesPerView: 4, spaceBetween: 4 },
         }}
         pagination={{
           clickable: true,
@@ -131,7 +130,7 @@ const Offer = () => {
         {offers.map((offer) => (
           <SwiperSlide key={offer.id} className="group">
             {/* Card Container */}
-            <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col border border-gray-100 group-hover:scale-105">
+            <div className="bg-white  rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col border border-gray-100 group-hover:scale-105">
               {/* Image Container with Gradient */}
               <div
                 className={`relative h-48 ${offer.bgColor} flex items-center justify-center p-6 overflow-hidden`}

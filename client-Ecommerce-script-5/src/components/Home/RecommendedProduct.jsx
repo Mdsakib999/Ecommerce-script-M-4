@@ -46,7 +46,7 @@ export default function RecommendedProduct() {
   if (isProductLoading) return <Loader />;
 
   return (
-    <div className="max-w-7xl mx-auto px-4">
+    <div className="max-w-7xl py-4 mx-auto px-4">
       <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 mb-6">
         <h2 className="text-2xl md:text-4xl bg-gradient-to-r from-gray-900 via-indigo-900 to-gray-900 bg-clip-text text-transparent font-semibold">
           Recommended for you

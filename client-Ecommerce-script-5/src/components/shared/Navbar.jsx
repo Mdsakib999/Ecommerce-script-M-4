@@ -124,7 +124,7 @@ export default function Navbar() {
 
               {/* Logo */}
               <div className="flex-shrink-0">
-                <Logo w="150px" />
+                <Logo w="160px" />
               </div>
             </div>
 
@@ -311,8 +311,7 @@ export default function Navbar() {
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-200">
             <div className="flex items-center gap-3">
-              <Logo w="150px" />
-              <span className="text-lg font-bold text-gray-800">BuyHive</span>
+              <Logo w="120px" />
             </div>
             <button
               onClick={closeMobileMenu}

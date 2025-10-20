@@ -31,7 +31,7 @@ export default function Product({ product }) {
   console.log(product);
   return (
     <Link key={product?.id} to={`/product/${product?._id}`}>
-      <div className="w-full mt-2 mx-auto max-w-96 bg-white backdrop-blur-sm rounded-3xl overflow-hidden relative transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 border-2 border-gray-200 hover:border-indigo-600">
+      <div className="w-full mt-2 mx-auto max-w-96 bg-white backdrop-blur-sm rounded-3xl overflow-hidden relative transform transition-all duration-500 sm:hover:scale-105 hover:-translate-y-2 border-2 border-gray-200 hover:border-indigo-600">
         {/* Sale Badge */}
         {product?.discountPrice && (
           <div className="absolute top-3 left-3 z-20 bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-black px-4 py-2 rounded-full shadow-2xl border-2 border-white">
@@ -47,7 +47,7 @@ export default function Product({ product }) {
               <img
                 src={product?.images[0]}
                 alt={product?.name}
-                className="w-full h-full object-fit rounded-2xl transform transition-transform duration-500 hover:scale-105"
+                className="w-full p-0 sm:p-1 h-full object-fit rounded-2xl transform transition-transform duration-500 hover:scale-105"
               />
             </div>
           </div>

@@ -195,7 +195,7 @@ export default function Login() {
             <button
               disabled={isLoading || isGoogleLoading}
               type="submit"
-              className={`flex mx-auto mt-8 items-center ease-in-out duration-300 transition-all  text-md justify-center w-full rounded-xl bg-transparent py-4  px-4 border border-indigo-400 text-indigo-400 hover:bg-indigo-400 font-semibold hover:text-white hover:border-transparent hover:shadow-xl transform hover:scale-105 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed disabled:hover:scale-100 gap-3 ${
+              className={`flex mx-auto mt-8 items-center ease-in-out duration-300 transition-all  text-md justify-center w-full rounded-xl bg-transparent py-4  px-4 border border-indigo-500 text-indigo-500 hover:bg-indigo-500 font-semibold hover:text-white hover:border-transparent hover:shadow-xl transform hover:scale-105 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed disabled:hover:scale-100 gap-3 ${
                 isLoading ? "animate-pulse" : ""
               }`}
             >

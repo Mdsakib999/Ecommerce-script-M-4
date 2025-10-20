@@ -89,7 +89,7 @@ export default function OfferedProducts() {
           {/* Products Section */}
           <div className="w-full relative group lg:w-3/4">
             {/* Products Grid */}
-                  <Swiper className=""
+                  <Swiper
         pagination={{
           type: 'progressbar',
         }}

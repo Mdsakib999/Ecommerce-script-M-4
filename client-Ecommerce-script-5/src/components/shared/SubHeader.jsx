@@ -50,13 +50,6 @@ export default function SubHeader({isScrolled}) {
             >
               Home
             </Button>
-            <Button
-              type="outline"
-              to="/products"
-              className="bg-white/80 backdrop-blur-sm border-blue-200/50 text-gray-700 hover:bg-white hover:border-blue-300 hover:shadow-md hover:scale-105 transition-all duration-300 font-medium rounded-xl px-4 py-2 text-sm"
-            >
-              Products
-            </Button>
             <Button type="outline" to="/about" className="">
               About
             </Button>

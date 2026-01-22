@@ -245,7 +245,7 @@ export default function Navbar() {
                         <>
                           <div className="px-4 py-4 border-b border-gray-100">
                             <p className="text-sm font-semibold text-gray-800">
-                              Welcome to BuyHive
+                              Welcome to Strideora
                             </p>
                             <p className="text-xs text-gray-500 mt-1">
                               Sign in to access your account
@@ -283,7 +283,7 @@ export default function Navbar() {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
               type="text"
-              placeholder="Search BuyHive..."
+              placeholder="Search Strideora..."
               className="w-full pl-10 pr-4 py-3 rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent bg-white"
             />
           </div>
@@ -350,7 +350,7 @@ export default function Navbar() {
               </div>
             ) : (
               <div className="p-6 bg-gradient-to-r from-secondary to-indigo-400 text-white">
-                <p className="font-semibold text-lg mb-2">Welcome to BuyHive</p>
+                <p className="font-semibold text-lg mb-2">Welcome to Strideora</p>
                 <p className="text-blue-100 text-sm mb-4">
                   Sign in to get personalized experience
                 </p>

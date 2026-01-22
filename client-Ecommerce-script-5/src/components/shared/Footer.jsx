@@ -1,13 +1,13 @@
 import {
-  Clock,
-  Facebook,
-  Instagram,
-  Mail,
-  MapPin,
-  Phone,
-  Shield,
-  Twitter,
-  Youtube,
+    Clock,
+    Facebook,
+    Instagram,
+    Mail,
+    MapPin,
+    Phone,
+    Shield,
+    Twitter,
+    Youtube,
 } from "lucide-react";
 import { Link } from "react-router";
 import logo from "../../assets/footerLogo.png";
@@ -34,11 +34,10 @@ export default function Footer() {
 
               <div className="space-y-3">
                 <p className="text-xl font-bold bg-gradient-to-r from-blue-200 to-indigo-200 bg-clip-text text-transparent">
-                  BuyHive Industries Ltd.
+                  Strideora Limited
                 </p>
                 <p className="text-gray-300 w-60 leading-relaxed text-sm">
-                  Providing reliable tech and premium shopping experiences since
-                  1992. Your trusted partner in quality and innovation.
+                  Step into style and comfort with Strideora. Your premium destination for exclusive footwear.
                 </p>
               </div>
 
@@ -212,7 +211,7 @@ export default function Footer() {
                 <p className="text-gray-400 text-sm text-center lg:text-left">
                   © 2025{" "}
                   <span className="text-white font-semibold">
-                    BuyHive Industries Ltd.
+                    Strideora Limited
                   </span>{" "}
                   • Demo Store • All Rights Reserved
                 </p>

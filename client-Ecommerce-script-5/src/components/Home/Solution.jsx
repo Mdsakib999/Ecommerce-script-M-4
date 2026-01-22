@@ -16,11 +16,6 @@ import Button from "../ui/Button";
 const Solution = () => {
 const features = [
     {
-      icon: TrendingUp,
-      title: "Smart Recommendations",
-      description: "Discover products tailored to your preferences with AI-powered suggestions that enhance your shopping experience"
-    },
-    {
       icon: Package,
       title: "Fast Delivery",
       description: "Get your orders quickly with flexible shipping options, real-time tracking, and guaranteed delivery dates"

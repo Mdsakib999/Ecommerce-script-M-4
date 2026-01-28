@@ -1,6 +1,5 @@
 import {
   ChevronDown,
-  Heart,
   HelpCircle,
   Home,
   Info,
@@ -22,17 +21,17 @@ import {
   useLogoutMutation,
   useUserInfoQuery,
 } from "../../redux/app/services/auth/authApi";
+import { useGetAllCategoriesQuery } from "../../redux/app/services/category/categoryApi";
+import SearchBar from "../SearchBar";
 import CartSlider from "./CartSlider";
 import Logo from "./Logo";
 import SubHeader from "./SubHeader";
-import SearchBar from "../SearchBar";
-import { useGetAllCategoriesQuery } from "../../redux/app/services/category/categoryApi";
 
 export default function Navbar() {
   const { data: userInfo } = useUserInfoQuery();
-    const { data: categories } = useGetAllCategoriesQuery();
-   const categoriesList = categories?.data || [];
-   console.log(categoriesList)
+  const { data: categories } = useGetAllCategoriesQuery();
+  const categoriesList = categories?.data || [];
+  console.log(categoriesList);
   const user = userInfo?.data;
   const cartCount = useSelector((state) => state.cart.items.length);
 
@@ -93,7 +92,7 @@ export default function Navbar() {
     await logout();
     dispatch(authApi.util.resetApiState());
     dispatch(clearCart());
-    setIsPictureLoaded(false)
+    setIsPictureLoaded(false);
     setIsMobileMenuOpen(false);
     setIsUserDropdownOpen(false);
     toast.success("Logged out successfully", { position: "bottom-right" });
@@ -129,6 +128,18 @@ export default function Navbar() {
               {/* Logo */}
               <div className="flex-shrink-0">
                 <Logo w="160px" />
+              </div>
+              <div className="categoryLinks flex">
+                {categoriesList?.map((category) => (
+                  <Link
+                    key={category._id}
+                    to={`/products?category=${category.id}`}
+                    className="block px-4 py-2 rounded-xl hover:bg-white transition-colors duration-200 text-ultra-violet hover:text-gray-700 font-medium"
+                    onClick={closeMobileMenu}
+                  >
+                    {category.name}
+                  </Link>
+                ))}
               </div>
             </div>
 
@@ -324,7 +335,6 @@ export default function Navbar() {
               <X className="w-6 h-6 text-gray-600" />
             </button>
           </div>
-
           {/* Scrollable Content */}
           <div className="overflow-y-auto h-[calc(100%-80px)]">
             {/* User Section */}
@@ -354,7 +364,9 @@ export default function Navbar() {
               </div>
             ) : (
               <div className="p-6 bg-gradient-to-r from-secondary to-indigo-400 text-white">
-                <p className="font-semibold text-lg mb-2">Welcome to Strideora</p>
+                <p className="font-semibold text-lg mb-2">
+                  Welcome to Strideora
+                </p>
                 <p className="text-blue-100 text-sm mb-4">
                   Sign in to get personalized experience
                 </p>
@@ -394,18 +406,18 @@ export default function Navbar() {
                     {user.role === "ADMIN" ? "Admin Dashboard" : "Dashboard"}
                   </Link>
 
-                            <Link
-                              to={
-                                user?.role === "ADMIN"
-                                  ? "/dashboard/admin/profile"
-                                  : "/dashboard/user/profile"
-                              }
-                              className="flex items-center gap-4 p-4 rounded-2xl hover:bg-white transition-all duration-200 text-gray-700 font-semibold border border-transparent hover:border-blue-200"
-                              onClick={() => setIsUserDropdownOpen(false)}
-                            >
-                              <User className="w-5 h-5 text-secondary" />
-                              My Profile
-                            </Link>
+                  <Link
+                    to={
+                      user?.role === "ADMIN"
+                        ? "/dashboard/admin/profile"
+                        : "/dashboard/user/profile"
+                    }
+                    className="flex items-center gap-4 p-4 rounded-2xl hover:bg-white transition-all duration-200 text-gray-700 font-semibold border border-transparent hover:border-blue-200"
+                    onClick={() => setIsUserDropdownOpen(false)}
+                  >
+                    <User className="w-5 h-5 text-secondary" />
+                    My Profile
+                  </Link>
                 </>
               )}
 

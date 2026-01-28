@@ -10,7 +10,7 @@ import {
   Youtube,
 } from "lucide-react";
 import { Link } from "react-router";
-import logo from "../../assets/footerLogo.png";
+import logo from "../../assets/logo.png";
 
 export default function Footer() {
   return (
@@ -23,7 +23,7 @@ export default function Footer() {
             <div className="space-y-4 lg:col-span-2">
               <Link
                 to="/"
-                className="inline-block h-12 transform hover:scale-105 transition-transform duration-300"
+                className="inline-block h-16 transform hover:scale-105 transition-transform duration-300"
               >
                 <img
                   className="w-32 h-full object-cover"

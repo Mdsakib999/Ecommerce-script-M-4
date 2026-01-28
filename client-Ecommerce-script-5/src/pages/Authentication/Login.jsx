@@ -83,21 +83,11 @@ export default function Login() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <div className="flex bg-gradient-to-br border-4 min-h-screen  from-blue-50 via-white to-indigo-50">
       {/* Left side - Image */}
       <div className="hidden lg:flex w-1/2 items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary to-indigo-400 z-10"></div>
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full"></div>
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full"></div>
-        </div>
-        <img
-          src={loginImage}
-          alt="Shop illustration"
-          className="object-cover h-full w-full transform scale-105"
-        />
-        {/* Overlay Content */}
-        <div className="absolute z-20 text-white p-12 max-w-lg">
+                <div className="absolute z-20 text-white p-12 max-w-lg">
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
             <h1 className="text-4xl font-black mb-4 leading-tight">
               Welcome Back to <span className="text-yellow-300">Strideora</span>
@@ -117,14 +107,14 @@ export default function Login() {
       </div>
 
       {/* Right side - Form */}
-      <div className="flex w-full lg:w-1/2 items-center justify-center p-6 lg:p-12">
-        <div className="w-full max-w-md bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-8 lg:p-10">
+      <div className="flex w-full lg:w-1/2 items-center justify-center">
+        <div className="w-full max-w-md bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 py-4 lg:py-6 px-8 lg:px-10">
           {/* Header */}
-          <div className="text-center mb-4">
-            <div className="flex justify-center mb-2">
+          <div className="text-center mb-2">
+            <div className="flex justify-center mb-1">
               <Logo w="160px" />
             </div>
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-2">
               <Sparkles className="w-4 h-4" />
               Welcome Back
             </div>
@@ -213,7 +203,7 @@ export default function Login() {
             </button>
 
             {/* Divider */}
-            <div className="relative flex items-center py-4">
+            <div className="relative flex items-center py-1">
               <div className="flex-grow border-t border-gray-300"></div>
               <span className="flex-shrink mx-4 text-gray-500 font-medium text-sm">
                 OR

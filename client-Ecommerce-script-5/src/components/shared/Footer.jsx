@@ -1,13 +1,13 @@
 import {
-    Clock,
-    Facebook,
-    Instagram,
-    Mail,
-    MapPin,
-    Phone,
-    Shield,
-    Twitter,
-    Youtube,
+  Clock,
+  Facebook,
+  Instagram,
+  Mail,
+  MapPin,
+  Phone,
+  Shield,
+  Twitter,
+  Youtube,
 } from "lucide-react";
 import { Link } from "react-router";
 import logo from "../../assets/footerLogo.png";
@@ -28,7 +28,7 @@ export default function Footer() {
                 <img
                   className="w-32 h-full object-cover"
                   src={logo}
-                  alt="BuyHive logo"
+                  alt="Strideora logo"
                 />
               </Link>
 
@@ -37,7 +37,8 @@ export default function Footer() {
                   Strideora Limited
                 </p>
                 <p className="text-gray-300 w-60 leading-relaxed text-sm">
-                  Step into style and comfort with Strideora. Your premium destination for exclusive footwear.
+                  Step into style and comfort with Strideora. Your premium
+                  destination for exclusive footwear.
                 </p>
               </div>
 
@@ -74,7 +75,7 @@ export default function Footer() {
                         {item}
                       </a>
                     </li>
-                  )
+                  ),
                 )}
               </ul>
             </div>

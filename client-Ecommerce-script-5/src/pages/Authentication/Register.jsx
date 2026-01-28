@@ -50,7 +50,7 @@ export default function Register() {
           <p className="font-serif">Account created successfully!</p>,
           {
             position: "bottom-right",
-          }
+          },
         );
         navigate("/");
       }
@@ -63,7 +63,7 @@ export default function Register() {
           <h1 className="font-serif">Email is already registered</h1>,
           {
             position: "bottom-right",
-          }
+          },
         );
       } else {
         toast.error(<h1 className="font-serif">{errorMessage}</h1>, {
@@ -93,7 +93,7 @@ export default function Register() {
         <div className="absolute z-20 text-white p-12 max-w-lg">
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
             <h1 className="text-4xl font-black mb-4 leading-tight">
-              Join <span className="text-yellow-300">BuyHive</span> Today
+              Join <span className="text-yellow-300">Strideora</span> Today
             </h1>
             <p className="text-white/90 text-lg font-medium leading-relaxed">
               Start your shopping journey with exclusive member benefits,

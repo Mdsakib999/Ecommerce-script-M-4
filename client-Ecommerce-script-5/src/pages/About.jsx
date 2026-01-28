@@ -36,7 +36,7 @@ export default function About() {
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white capitalize leading-tight">
             About{" "}
             <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
-              BuyHive
+              Strideora
             </span>
           </h1>
 
@@ -64,7 +64,7 @@ export default function About() {
 
         <div className="relative z-10">
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed bg-white/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-200/50 shadow-sm">
-            At BuyHive, we are committed to making online shopping simple,
+            At Strideora, we are committed to making online shopping simple,
             enjoyable, and trustworthy. Our mission is to deliver high-quality
             products directly to your doorstep while providing exceptional
             customer service. Every item is carefully selected for quality,

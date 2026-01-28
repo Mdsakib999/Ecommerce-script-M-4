@@ -138,7 +138,7 @@ export default function Navbar() {
               {/* Action Icons */}
               <div className="flex items-center space-x-4">
                 {/* Shopping Cart */}
-                <button
+                <div
                   className="p-3 hover:bg-white/50 rounded-2xl transition-all duration-200 group relative"
                   onClick={() => setIsCartOpen(true)}
                 >
@@ -152,7 +152,7 @@ export default function Navbar() {
                       {cartCount}
                     </span>
                   )}
-                </button>
+                </div>
 
                 {/* User Dropdown - Desktop Only */}
                 <div className="relative dropdown-container hidden lg:block">

@@ -93,7 +93,7 @@ export default function SubHeader({isScrolled}) {
       </div>
 
       {/* Custom animations */}
-      <style jsx>{`
+      <style>{`
         @keyframes float {
           0%,
           100% {

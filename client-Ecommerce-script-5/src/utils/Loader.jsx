@@ -20,7 +20,7 @@ export default function Loader() {
         {/* Loading text with gradient */}
         <div className="text-center">
           <p className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-indigo-600 bg-clip-text text-transparent">
-            Preparing BuyHive
+            Preparing Strideora
           </p>
           <p className="text-gray-600 mt-2 font-medium">
             Your shopping experience is loading...
@@ -45,7 +45,7 @@ export default function Loader() {
       </div>
 
       {/* Custom animations */}
-      <style jsx>{`
+      <style>{`
         @keyframes progress {
           0% {
             transform: translateX(-100%);

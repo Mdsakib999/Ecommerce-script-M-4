@@ -63,7 +63,7 @@ export default function Login() {
           <h1 className="font-serif">Your account is not verified</h1>,
           {
             position: "bottom-right",
-          }
+          },
         );
       } else if (
         errorMessage === "You have authenticated through Google login!"
@@ -72,7 +72,7 @@ export default function Login() {
           <h1 className="font-serif">You are authenticated through Google!</h1>,
           {
             position: "bottom-right",
-          }
+          },
         );
       } else {
         toast.error(<h1 className="font-serif">{errorMessage}</h1>, {
@@ -100,7 +100,7 @@ export default function Login() {
         <div className="absolute z-20 text-white p-12 max-w-lg">
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
             <h1 className="text-4xl font-black mb-4 leading-tight">
-              Welcome Back to <span className="text-yellow-300">BuyHive</span>
+              Welcome Back to <span className="text-yellow-300">Strideora</span>
             </h1>
             <p className="text-white/90 text-lg font-medium leading-relaxed">
               Continue your shopping journey with exclusive deals and

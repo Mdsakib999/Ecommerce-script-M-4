@@ -28,7 +28,7 @@ export default function Product({ product }) {
       });
     }
   };
-  console.log(product);
+  // console.log(product);
   return (
     <Link key={product?.id} to={`/product/${product?._id}`}>
       <div className="w-full mt-2 mx-auto max-w-96 bg-white backdrop-blur-sm rounded-3xl overflow-hidden relative transform transition-all duration-500 sm:hover:scale-105 hover:-translate-y-2 border-2 border-gray-200 hover:border-indigo-600">

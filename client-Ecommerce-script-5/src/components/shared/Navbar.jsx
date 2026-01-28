@@ -26,9 +26,13 @@ import CartSlider from "./CartSlider";
 import Logo from "./Logo";
 import SubHeader from "./SubHeader";
 import SearchBar from "../SearchBar";
+import { useGetAllCategoriesQuery } from "../../redux/app/services/category/categoryApi";
 
 export default function Navbar() {
   const { data: userInfo } = useUserInfoQuery();
+    const { data: categories } = useGetAllCategoriesQuery();
+   const categoriesList = categories?.data || [];
+   console.log(categoriesList)
   const user = userInfo?.data;
   const cartCount = useSelector((state) => state.cart.items.length);
 

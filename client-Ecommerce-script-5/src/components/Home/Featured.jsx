@@ -5,45 +5,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useGetAllCategoriesQuery } from "../../redux/app/services/category/categoryApi";
 
 const Featured = () => {
-  const categories = [
-    {
-      id: 1,
-      name: "Electronics",
-      image:
-        "https://res.cloudinary.com/dpkjsufwx/image/upload/v1760521070/products/vxsssdax4idhkk4ousre.avif",
-      count: 45,
-    },
-    {
-      id: 2,
-      name: "Accessories",
-      image:
-        "https://res.cloudinary.com/dpkjsufwx/image/upload/v1760520895/products/umubcdzvmzabpnk6orpn.jpg",
-      count: 38,
-    },
-    {
-      id: 3,
-      name: "Home Appliances",
-      image:
-        "https://res.cloudinary.com/dpkjsufwx/image/upload/v1760521316/products/gpp3oumjnmomf69iod41.jpg",
-      count: 56,
-    },
-    {
-      id: 4,
-      name: "Home Entertainment",
-      image:
-        "https://res.cloudinary.com/dpkjsufwx/image/upload/v1760521245/products/je3uxv5xraeolzrwhdzs.jpg",
-      count: 33,
-    },
-    {
-      id: 5,
-      name: "Kitchen Appliances",
-      image:
-        "https://res.cloudinary.com/dpkjsufwx/image/upload/v1760521269/products/oddfwp1nph2c73hftjpf.jpg",
-      count: 25,
-    },
-  ];
+  const { data: categories } = useGetAllCategoriesQuery();
+ const categoriesList = categories?.data || [];
+ console.log(categoriesList)
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-12 relative">
@@ -89,7 +56,7 @@ const Featured = () => {
         }}
         className="pb-12"
       >
-        {categories.map((category) => (
+        {categoriesList?.map((category) => (
           <SwiperSlide key={category.id}>
             <Link to={`/products?category=${category.id}`}>
               <div className="group flex flex-col items-center cursor-pointer">

@@ -20,7 +20,7 @@ export default function OfferedProducts() {
   const { data: productsData, isLoading: isProductLoading } =
     useGetAllProductQuery(params);
   const products = productsData?.data || [];
-  console.log(products);
+  // console.log(products);
 
   if (isProductLoading) return <Loader />;
 

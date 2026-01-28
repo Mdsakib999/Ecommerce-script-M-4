@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router";
 import googleLogo from "../../assets/googleLogo.png";
-import loginImage from "../../assets/login.jpg";
 import Logo from "../../components/shared/Logo";
 import { useLoginMutation } from "../../redux/app/services/auth/authApi";
 

@@ -141,6 +141,11 @@ export default function Navbar() {
                   </Link>
                 ))}
               </div>
+              <Link to="/products">
+                <span className="block px-4 py-2 capitalize rounded-xl hover:bg-white transition-colors duration-200 text-gray-700 hover:text-gray-900 font-medium">
+                  New Arrivals
+                </span>
+              </Link>
             </div>
 
             {/* Right side actions */}

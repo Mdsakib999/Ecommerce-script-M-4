@@ -9,7 +9,7 @@ import Product from "./Product";
 export default function Products() {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [page, setPage] = useState(1);
-  const [sort, setSort] = useState("createdAt");
+  const [sort, setSort] = useState("-createdAt");
   const [searchParams] = useSearchParams();
   const urlCategory = searchParams?.get("category");
   useEffect(() => {

@@ -31,7 +31,7 @@ export default function Navbar() {
   const { data: userInfo } = useUserInfoQuery();
   const { data: categories } = useGetAllCategoriesQuery();
   const categoriesList = categories?.data || [];
-  console.log(categoriesList);
+  // console.log(categoriesList);
   const user = userInfo?.data;
   const cartCount = useSelector((state) => state.cart.items.length);
 
@@ -133,7 +133,7 @@ export default function Navbar() {
                 {categoriesList?.map((category) => (
                   <Link
                     key={category._id}
-                    to={`/products?category=${category.id}`}
+                    to={`/products?category=${category.name}`}
                     className="block px-4 py-2 rounded-xl hover:bg-white transition-colors duration-200 text-ultra-violet hover:text-gray-700 font-medium"
                     onClick={closeMobileMenu}
                   >

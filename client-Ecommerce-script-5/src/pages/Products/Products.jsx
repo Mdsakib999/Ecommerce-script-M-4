@@ -1,15 +1,23 @@
 import { useEffect, useState } from "react";
-import Product from "./Product";
-import { useGetAllProductQuery } from "../../redux/app/services/product/productApi";
+import { useSearchParams } from "react-router";
 import { useGetAllCategoriesQuery } from "../../redux/app/services/category/categoryApi";
-import Pagination from "../Dashboard/common/Pagination";
+import { useGetAllProductQuery } from "../../redux/app/services/product/productApi";
 import Loader from "../../utils/Loader";
+import Pagination from "../Dashboard/common/Pagination";
+import Product from "./Product";
 
 export default function Products() {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [page, setPage] = useState(1);
   const [sort, setSort] = useState("createdAt");
-
+  const [searchParams] = useSearchParams();
+  const urlCategory = searchParams?.get("category");
+  useEffect(() => {
+    if (urlCategory) {
+      setSelectedCategories([urlCategory]);
+      setPage(1);
+    }
+  }, [urlCategory]);
   const params = {
     sort,
     page,
@@ -87,8 +95,8 @@ export default function Products() {
                     } else {
                       setSelectedCategories(
                         selectedCategories.filter(
-                          (name) => name !== category.name
-                        )
+                          (name) => name !== category.name,
+                        ),
                       );
                     }
                   }}

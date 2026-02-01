@@ -7,36 +7,39 @@ export default function Banner() {
   const slides = [
     {
       id: 1,
-      badge: "50% off",
-      title: "WHAT'S HAPPENING",
-      subtitle: "Endless Prizes, Unbeatable Prices",
-      backgroundImage: "https://images.unsplash.com/photo-1607082350899-7e105aa886ae?w=1200&h=600&fit=crop&crop=center",
+      badge: "Men's Collection",
+      title: "RUN WITH POWER",
+      subtitle: "Experience the new Velocity X1 for Men",
+      backgroundImage: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&h=600&fit=crop&crop=center&blur=50",
       productImage:
-        "https://res.cloudinary.com/dpkjsufwx/image/upload/v1760520895/products/umubcdzvmzabpnk6orpn.jpg?w=400&h=400&fit=crop",
-      gradient: "from-purple-300 via-purple-200 to-pink-200",
-      productType: "headphones",
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      gradient: "from-blue-600 via-blue-500 to-indigo-600",
+      productType: "Running Shoes",
+      category: "Men",
     },
     {
       id: 2,
-      badge: "flash sales",
-      title: "MEGA DEALS",
-      subtitle: "Limited Time Offers, Maximum Savings",
-      backgroundImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=600&fit=crop&crop=center",
+      badge: "Women's Exclusive",
+      title: "SUMMER BREEZE",
+      subtitle: "Lightweight styles designed for Women",
+      backgroundImage: "https://images.unsplash.com/photo-1562273138-f46be4ebdf6b?w=1200&h=600&fit=crop&crop=center&blur=50",
       productImage:
-        "https://res.cloudinary.com/dpkjsufwx/image/upload/v1760521070/products/vxsssdax4idhkk4ousre.avif?w=400&h=400&fit=crop",
-      gradient: "from-blue-300 via-blue-200 to-cyan-200",
-      productType: "smart watches",
+        "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      gradient: "from-pink-400 via-rose-400 to-red-300",
+      productType: "Sandals",
+      category: "Women",
     },
     {
       id: 3,
-      badge: "new arrivals",
-      title: "TRENDING NOW",
-      subtitle: "Fresh Styles Just Dropped",
-      backgroundImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=600&fit=crop&crop=center",
+      badge: "Kids' Adventure",
+      title: "PLAY ALL DAY",
+      subtitle: "Durable High Tops for active Kids",
+      backgroundImage: "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?w=1200&h=600&fit=crop&crop=center&blur=50",
       productImage:
-        "https://res.cloudinary.com/dpkjsufwx/image/upload/v1760522754/products/nlfp3uc0rb7muk65aecg.jpg?w=400&h=400&fit=crop",
-      gradient: "from-orange-200 via-orange-300 to-red-200",
-      productType: "basketball shoes",
+        "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      gradient: "from-yellow-400 via-orange-400 to-red-400",
+      productType: "High Tops",
+      category: "Kids",
     },
   ];
 
@@ -105,7 +108,7 @@ export default function Banner() {
 
                   {/* CTA Button */}
                   <div className="w-max">
-                    <Link to="/products">
+                    <Link to={`/products?category=${slides[activeSlide].category}`}>
                       <button className="bg-indigo-300 hover:bg-ultra-violet text-gray-700 hover:text-white font-black px-8 py-4 rounded-xl text-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 group cursor-pointer">
                         <ShoppingCart className="w-6 h-6 group-hover:scale-110 transition-transform" />
                         <span>Shop Now</span>

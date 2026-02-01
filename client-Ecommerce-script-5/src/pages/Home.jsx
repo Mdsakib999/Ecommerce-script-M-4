@@ -31,7 +31,7 @@ export default function Home() {
         {/* <Featured /> */}
         <OfferedProducts />
         <PopularProduct />
-        <Offer />
+        {/* <Offer /> */}
         <RecommendedProduct />
         <TopBanner />
         <Solution />

@@ -16,6 +16,8 @@ export default function Products() {
     if (urlCategory) {
       setSelectedCategories([urlCategory]);
       setPage(1);
+    } else {
+      setSelectedCategories([]);
     }
   }, [urlCategory]);
   const params = {

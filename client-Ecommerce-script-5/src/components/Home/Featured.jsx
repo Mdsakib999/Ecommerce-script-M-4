@@ -10,7 +10,7 @@ import { useGetAllCategoriesQuery } from "../../redux/app/services/category/cate
 const Featured = () => {
   const { data: categories } = useGetAllCategoriesQuery();
  const categoriesList = categories?.data || [];
- console.log(categoriesList)
+//  console.log(categoriesList)
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-12 relative">

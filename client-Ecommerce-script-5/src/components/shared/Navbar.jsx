@@ -1,15 +1,15 @@
 import {
-  ChevronDown,
-  HelpCircle,
-  Home,
-  Info,
-  LogOut,
-  Menu,
-  Package,
-  Phone,
-  Search,
-  User,
-  X,
+    ChevronDown,
+    HelpCircle,
+    Home,
+    Info,
+    LogOut,
+    Menu,
+    Package,
+    Phone,
+    Search,
+    User,
+    X,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -17,9 +17,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router";
 import { clearCart } from "../../redux/app/features/cart/cartSlice";
 import {
-  authApi,
-  useLogoutMutation,
-  useUserInfoQuery,
+    authApi,
+    useLogoutMutation,
+    useUserInfoQuery,
 } from "../../redux/app/services/auth/authApi";
 import { useGetAllCategoriesQuery } from "../../redux/app/services/category/categoryApi";
 import SearchBar from "../SearchBar";
@@ -47,7 +47,13 @@ export default function Navbar() {
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const scrollY = window.scrollY;
+      // Add hysteresis (buffer) to prevent flickering at the threshold
+      if (scrollY > 20) {
+        setIsScrolled(true);
+      } else if (scrollY < 10) {
+        setIsScrolled(false);
+      }
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);

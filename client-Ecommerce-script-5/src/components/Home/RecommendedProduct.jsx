@@ -8,6 +8,7 @@ import Loader from "../../utils/Loader";
 export default function RecommendedProduct() {
   const params = {
     limit: 10,
+    sort: "-price"
   };
 
   const { data: productsData, isLoading: isProductLoading } =

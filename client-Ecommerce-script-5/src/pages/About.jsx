@@ -27,7 +27,7 @@ export default function About() {
           {/* Preheading with animated underline */}
           <div className="relative">
             <p className="tracking-widest text-lg font-light text-gray-200 uppercase mb-2">
-              WE CAN DO MORE FOR YOU
+              STEP INTO THE FUTURE
             </p>
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
           </div>
@@ -64,13 +64,7 @@ export default function About() {
 
         <div className="relative z-10">
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed bg-white/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-200/50 shadow-sm">
-            At Strideora, we are committed to making online shopping simple,
-            enjoyable, and trustworthy. Our mission is to deliver high-quality
-            products directly to your doorstep while providing exceptional
-            customer service. Every item is carefully selected for quality,
-            value, and style. We aim to build a community where customers feel
-            supported, valued, and inspired. Your satisfaction drives everything
-            we do, making every interaction seamless and memorable.
+            At Strideora, we believe that the right pair of shoes can take you anywhere. Our mission is to fuse cutting-edge comfort technology with modern design, delivering footwear that supports every step of your journey. Whether you're running a marathon, conquering the boardroom, or exploring the city streets, Strideora is committed to keeping you moving with confidence, style, and unmatched quality.
           </p>
         </div>
       </div>
@@ -95,7 +89,7 @@ export default function About() {
           {[
             {
               number: 800,
-              label: "Product Types",
+              label: "Footwear Styles",
               color: "from-blue-500 to-cyan-500",
             },
             {
@@ -105,12 +99,12 @@ export default function About() {
             },
             {
               number: 2500,
-              label: "Trust Customers",
+              label: "Happy Walkers",
               color: "from-green-500 to-emerald-500",
             },
             {
               number: 15,
-              label: "Stores Nationwide",
+              label: "Partner Outlets",
               color: "from-orange-500 to-red-500",
             },
           ].map((stat, index) => (
@@ -156,15 +150,15 @@ export default function About() {
       </div>
       <AboutSection
         preheading="OUR HISTORY"
-        heading="Creative and renovate fashion trends"
-        normaltext="Collaboratively administrate empowered markets via plug-and-play maintain networks. Dynamically usable procrastinate B2B users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI."
+        heading="A Legacy in Every Step"
+        normaltext="Founded with a passion for craftsmanship and movement, Strideora began as a small boutique dedicated to high-quality leather shoes. Over the years, we have evolved into a global brand, merging traditional shoe-making techniques with modern athletic technology. Our journey is defined by a relentless pursuit of the perfect fit."
         image="https://i.ibb.co.com/trJvsqh/pexels-karolina-grabowska-5650016.jpg"
         reverse={false}
       />
       <AboutSection
         preheading="Our vision"
-        heading="We are marketpress"
-        normaltext="Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI."
+        heading="We are Strideora"
+        normaltext="Our vision is to redefine the footwear industry by championing sustainable innovation and inclusive design. We envision a world where every step you take is supported by eco-friendly materials and ergonomic engineering, ensuring that you never have to compromise between style and comfort."
         image="https://i.ibb.co.com/tMBVZ117/pexels-karolina-grabowska-5632398.jpg"
         reverse={true}
       />

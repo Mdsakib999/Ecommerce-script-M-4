@@ -1,25 +1,32 @@
-import { Clock, Flame, TrendingUp, Zap, ArrowRight, ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, Flame, TrendingUp, Zap } from "lucide-react";
 import { useMemo } from "react";
+import { Autoplay, Navigation } from 'swiper/modules';
 import Product from "../../pages/Products/Product";
 import { useGetAllProductQuery } from "../../redux/app/services/product/productApi";
 import Loader from "../../utils/Loader";
 import Button from "../ui/Button";
 import OfferTimer from "./OfferTimer";
-import {Autoplay, Navigation } from 'swiper/modules';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 export default function OfferedProducts() {
   const targetDate = new Date("January 25, 2026 00:00:00").getTime();
 
-  const params = useMemo(() => ({ limit: 3 }), []);
+  const params = useMemo(() => ({ limit: 50, sort: "-createdAt" }), []);
   const { data: productsData, isLoading: isProductLoading } =
     useGetAllProductQuery(params);
-  const products = productsData?.data || [];
+  
+  // Filter for products that have a meaningful discount
+  const products = useMemo(() => {
+    return (productsData?.data || []).filter(
+      (product) => product.discountPrice > 0 && product.discountPrice < product.price
+    ).slice(0, 10);
+  }, [productsData]); 
+  
   // console.log(products);
 
   if (isProductLoading) return <Loader />;

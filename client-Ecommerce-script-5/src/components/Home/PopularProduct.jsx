@@ -23,6 +23,7 @@ export default function PopularProduct() {
 
   const params = {
     limit: 10,
+    sort: "-createdAt"
   };
 
   const { data: productsData, isLoading: isProductLoading } =

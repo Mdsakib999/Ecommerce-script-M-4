@@ -4,29 +4,29 @@ import Button from "../components/ui/Button";
 export default function Faq() {
   const faqs = [
     {
-      question: "What types of electronic accessories do you sell?",
+      question: "How do I find my correct shoe size?",
       answer:
-        "We offer a wide range of electronic accessories including headphones, chargers, phone cases, smartwatches, Bluetooth speakers, gaming accessories, and much more. All our products are from trusted brands with warranty support.",
+        "We recommend checking our detailed Size Guide available on every product page. If you are between sizes, we generally suggest sizing up for running shoes and sticking to your true size for casual sneakers. You can also measure your foot length and compare it with our chart for the best fit.",
     },
     {
-      question: "Do you ship internationally?",
+      question: "Do you offer international shipping?",
       answer:
-        "Yes, we ship our products worldwide. Shipping fees and delivery time may vary depending on your location. You can calculate shipping costs at checkout.",
-    },
-    {
-      question: "How can I track my order?",
-      answer:
-        "After placing an order, you will receive a tracking number via email. You can use this number on our tracking portal to see real-time updates on your shipment.",
+        "Yes, we ship Strideora footwear to over 50 countries worldwide. Shipping fees and estimated delivery times will be calculated at checkout based on your location. Standard international shipping typically takes 7-14 business days.",
     },
     {
       question: "What is your return and refund policy?",
       answer:
-        "We offer a 30-day return policy on all electronic accessories. Products must be unused and in original packaging. Refunds are processed within 5-7 business days after we receive the returned item.",
+        "We want you to love your shoes! We offer a hassle-free 30-day return policy for all unworn items in their original packaging. Once we receive your return, refunds are processed within 5-7 business days to your original payment method.",
     },
     {
-      question: "Do your products come with a warranty?",
+      question: "How do I clean and care for my Strideora shoes?",
       answer:
-        "Yes, most of our electronic accessories come with a 6-month to 1-year warranty depending on the brand. Warranty details are provided with each product description.",
+        "For most of our sneakers, we recommend using a soft brush or cloth with mild soap and warm water. Avoid machine washing as it may damage the specialized materials. For leather items, use a high-quality leather cleaner and conditioner.",
+    },
+    {
+      question: "Are your materials sustainable?",
+      answer:
+        "Sustainability is at our core. Many of our models feature recycled upper materials and eco-friendly soles. We are continuously working to increase the percentage of sustainable components in our footwear without compromising on performance.",
     },
   ];
 

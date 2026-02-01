@@ -10,7 +10,10 @@ import cookieParser from "cookie-parser";
 import { envVariables } from "./app/config/envConfig";
 
 const app = express();
-
+const allowedOrigins = [
+  envVariables.FRONTEND_URL,
+  "https://strideora.netlify.app",
+];
 app.use(
   expressSession({
     secret: envVariables.EXPRESS_SESSION_SECRET as string,
@@ -29,7 +32,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: envVariables.FRONTEND_URL,
+    origin: allowedOrigins,
     credentials: true,
   })
 );
